@@ -1,3 +1,9 @@
+# 1.1.0
+
+- Added support for tokenizing Bash
+- Added dark theme for Bash
+- Made highlighter methods virtual so they can be overridden
+
 # 1.0.0
 
 - Initial release

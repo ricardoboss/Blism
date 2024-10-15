@@ -6,6 +6,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<ProjectReference Include="..\Blism.Language.Bash\Blism.Language.Bash.csproj" />
 		<ProjectReference Include="..\Blism.Language.CSharp\Blism.Language.CSharp.csproj"/>
 		<ProjectReference Include="..\Blism.Language.Dart\Blism.Language.Dart.csproj"/>
 		<ProjectReference Include="..\Blism.Language.Yaml\Blism.Language.Yaml.csproj"/>

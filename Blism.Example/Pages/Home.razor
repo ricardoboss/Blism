@@ -1,4 +1,5 @@
 ﻿@page "/"
+@using Blism.Language.Bash
 @using Blism.Language.Csharp
 @using Blism.Language.Dart
 @using Blism.Language.Yaml
@@ -45,6 +46,19 @@ void main() async {
   print('Hello, World!');
 }";
 
+	private const string BashSource = @"#!/bin/bash
+
+# This is a comment
+echo 'Hello, World!'
+
+if [[ $1 == '--help' ]]; then
+  echo 'Usage: script.sh [OPTIONS]'
+  echo 'Options:'
+  echo '  -h, --help  Show this help message and exit'
+  exit 0
+fi
+";
+
 }
 
 <SyntaxHighlighter Code="@CSharpSource" Tokenizer="CSharpTokenizer.Instance" Highlighter="CSharpDarkHighlighter.Instance"/>
@@ -52,3 +66,5 @@ void main() async {
 <SyntaxHighlighter Code="@YamlSource" Tokenizer="YamlTokenizer.Instance" Highlighter="YamlDarkHighlighter.Instance"/>
 
 <SyntaxHighlighter Code="@DartSource" Tokenizer="DartTokenizer.Instance" Highlighter="DartDarkHighlighter.Instance"/>
+
+<SyntaxHighlighter Code="@BashSource" Tokenizer="BashTokenizer.Instance" Highlighter="BashDarkHighlighter.Instance"/>

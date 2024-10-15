@@ -4,7 +4,7 @@ public class DartDarkHighlighter : ITokenTypeHighlighter<DartTokenType>
 {
 	public static readonly DartDarkHighlighter Instance = new();
 
-	public string GetCss(DartTokenType tokenType)
+	public virtual string GetCss(DartTokenType tokenType)
 	{
 		return tokenType switch
 		{
@@ -17,7 +17,7 @@ public class DartDarkHighlighter : ITokenTypeHighlighter<DartTokenType>
 		};
 	}
 
-	public string GetDefaultCss()
+	public virtual string GetDefaultCss()
 	{
 		return "color: #d4d4d4; background-color: #1e1e1e;";
 	}

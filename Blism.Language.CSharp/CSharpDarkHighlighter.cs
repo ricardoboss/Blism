@@ -4,7 +4,7 @@ public class CSharpDarkHighlighter : ITokenTypeHighlighter<CSharpTokenType>
 {
 	public static readonly CSharpDarkHighlighter Instance = new();
 
-	public string GetCss(CSharpTokenType tokenType)
+	public virtual string GetCss(CSharpTokenType tokenType)
 	{
 		return tokenType switch
 		{
@@ -17,7 +17,7 @@ public class CSharpDarkHighlighter : ITokenTypeHighlighter<CSharpTokenType>
 		};
 	}
 
-	public string GetDefaultCss()
+	public virtual string GetDefaultCss()
 	{
 		return "color: #d4d4d4; background-color: #1e1e1e;";
 	}

@@ -4,7 +4,7 @@ public class YamlDarkHighlighter : ITokenTypeHighlighter<YamlTokenType>
 {
 	public static readonly YamlDarkHighlighter Instance = new();
 
-	public string GetCss(YamlTokenType tokenType)
+	public virtual string GetCss(YamlTokenType tokenType)
 	{
 		return tokenType switch
 		{
@@ -15,7 +15,7 @@ public class YamlDarkHighlighter : ITokenTypeHighlighter<YamlTokenType>
 		};
 	}
 
-	public string GetDefaultCss()
+	public virtual string GetDefaultCss()
 	{
 		return "color: #d4d4d4; background-color: #1e1e1e;";
 	}
