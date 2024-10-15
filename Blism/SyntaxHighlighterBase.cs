@@ -2,10 +2,11 @@
 
 namespace Blism;
 
-public abstract class SyntaxHighlighterBase<TLanguage, TTokenType> : ComponentBase
-	where TLanguage : IHighlighterLanguage<TTokenType>
-	where TTokenType : Enum
+public abstract class SyntaxHighlighterBase<TTokenType> : ComponentBase where TTokenType : Enum
 {
 	[Parameter, EditorRequired]
-	public required TLanguage Language { get; set; }
+	public required ITokenizer<TTokenType> Tokenizer { get; set; }
+
+	[Parameter, EditorRequired]
+	public required ITokenTypeHighlighter<TTokenType> Highlighter { get; set; }
 }

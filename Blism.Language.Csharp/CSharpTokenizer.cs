@@ -2,8 +2,10 @@
 
 namespace Blism.Language.Csharp;
 
-public partial class CSharpTokenizer : ITokenizer<CSharpTokenType>
+public class CSharpTokenizer : ITokenizer<CSharpTokenType>
 {
+	public static readonly CSharpTokenizer Instance = new();
+
 	private static readonly string[] Keywords =
 	[
 		"abstract", "as", "base", "bool", "break", "byte", "case", "catch", "char", "checked", "class", "const",

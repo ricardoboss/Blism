@@ -4,6 +4,8 @@ namespace Blism.Language.Yaml;
 
 public class YamlTokenizer : BaseTokenizer<YamlTokenType>
 {
+	public static readonly YamlTokenizer Instance = new();
+
 	protected override IEnumerable<(Regex regex, YamlTokenType type)> GetTokenDefinitions()
 	{
 		yield return (new Regex(@"\s+"), YamlTokenType.Whitespace);

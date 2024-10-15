@@ -2,6 +2,8 @@
 
 public class DartDarkHighlighter : ITokenTypeHighlighter<DartTokenType>
 {
+	public static readonly DartDarkHighlighter Instance = new();
+
 	public string GetCss(DartTokenType tokenType)
 	{
 		return tokenType switch

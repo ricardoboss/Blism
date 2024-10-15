@@ -4,6 +4,8 @@ namespace Blism.Language.Dart;
 
 public class DartTokenizer : BaseTokenizer<DartTokenType>
 {
+	public static readonly DartTokenizer Instance = new();
+
 	protected override IEnumerable<(Regex regex, DartTokenType type)> GetTokenDefinitions()
 	{
 		yield return (new Regex(@"\/\/.*"), DartTokenType.Comment);

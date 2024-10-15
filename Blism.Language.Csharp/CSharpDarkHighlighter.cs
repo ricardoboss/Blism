@@ -2,6 +2,8 @@
 
 public class CSharpDarkHighlighter : ITokenTypeHighlighter<CSharpTokenType>
 {
+	public static readonly CSharpDarkHighlighter Instance = new();
+
 	public string GetCss(CSharpTokenType tokenType)
 	{
 		return tokenType switch

@@ -2,6 +2,8 @@
 
 public class YamlDarkHighlighter : ITokenTypeHighlighter<YamlTokenType>
 {
+	public static readonly YamlDarkHighlighter Instance = new();
+
 	public string GetCss(YamlTokenType tokenType)
 	{
 		return tokenType switch

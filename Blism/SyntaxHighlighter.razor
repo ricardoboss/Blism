@@ -1,6 +1,5 @@
-﻿@typeparam TLanguage where TLanguage : IHighlighterLanguage<TTokenType>
-@typeparam TTokenType where TTokenType : Enum
-@inherits SyntaxHighlighterBase<TLanguage, TTokenType>
+﻿@typeparam TTokenType where TTokenType : Enum
+@inherits SyntaxHighlighterBase<TTokenType>
 
 @code {
 
@@ -14,11 +13,11 @@
 	protected override void OnParametersSet()
 	{
 		classDefinitions.Clear();
-		tokens = Language.Tokenizer.Tokenize(Code).ToList();
+		tokens = Tokenizer.Tokenize(Code).ToList();
 
 		foreach (var token in tokens.Where(token => !classDefinitions.ContainsKey(token.Type)))
 		{
-			classDefinitions.Add(token.Type, Language.TypeHighlighter.GetCss(token.Type));
+			classDefinitions.Add(token.Type, Highlighter.GetCss(token.Type));
 		}
 	}
 
@@ -26,7 +25,7 @@
 
 @if (tokens != null)
 {
-	<pre style="@Language.TypeHighlighter.GetDefaultCss()">
+	<pre style="@Highlighter.GetDefaultCss()">
 		@foreach (var token in tokens)
 		{
 			<span style="@classDefinitions[token.Type]">@token.Value</span>
