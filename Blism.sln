@@ -2,7 +2,7 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blism", "Blism\Blism.csproj", "{AC7A7808-E60E-46D4-ACE4-10B440149D4D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blism.Language.CSharp", "Blism.Language.Csharp\Blism.Language.CSharp.csproj", "{DB839967-337C-4E67-A8BC-F8059FA8B84F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blism.Language.CSharp", "Blism.Language.CSharp\Blism.Language.CSharp.csproj", "{DB839967-337C-4E67-A8BC-F8059FA8B84F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blism.Example", "Blism.Example\Blism.Example.csproj", "{AFED1B67-BE13-4E36-919E-77B76BADFDC7}"
 EndProject
