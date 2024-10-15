@@ -1,7 +1,12 @@
 ﻿@typeparam TTokenType where TTokenType : Enum
-@inherits SyntaxHighlighterBase<TTokenType>
 
 @code {
+
+	[Parameter, EditorRequired]
+	public required ITokenizer<TTokenType> Tokenizer { get; set; }
+
+	[Parameter, EditorRequired]
+	public required ITokenTypeHighlighter<TTokenType> Highlighter { get; set; }
 
 	[Parameter, EditorRequired]
 	public required string Code { get; set; }
