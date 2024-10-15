@@ -32,6 +32,8 @@ jobs:
         run: dotnet nuget push Blism.Language.Dart/bin/Release/*.nupkg -k ${{ secrets.NUGET_API_KEY }} -s https://api.nuget.org/v3/index.json
       - name: Publish Blism.Language.Yaml Package
         run: dotnet nuget push Blism.Language.Yaml/bin/Release/*.nupkg -k ${{ secrets.NUGET_API_KEY }} -s https://api.nuget.org/v3/index.json
+      - name: Publish Blism.Language.Bash Package
+        run: dotnet nuget push Blism.Language.Bash/bin/Release/*.nupkg -k ${{ secrets.NUGET_API_KEY }} -s https://api.nuget.org/v3/index.json
       - name: Publish GitHub Release
         uses: softprops/action-gh-release@v2
         with:
