@@ -28,6 +28,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "assets", "assets", "{7C7FE3
 		.github\assets\screenshot.png = .github\assets\screenshot.png
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{FA18B7CB-85D1-45B6-A4BA-739EC489B3F1}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\dotnet.yml = .github\workflows\dotnet.yml
+		.github\workflows\publish.yml = .github\workflows\publish.yml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -58,5 +64,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{850B4480-5E9D-4F4C-B132-9E222E83E571} = {EA59A048-D32D-410C-832C-5E3B81196603}
 		{7C7FE3A1-6175-4031-A81E-A9DA535E9703} = {850B4480-5E9D-4F4C-B132-9E222E83E571}
+		{FA18B7CB-85D1-45B6-A4BA-739EC489B3F1} = {850B4480-5E9D-4F4C-B132-9E222E83E571}
 	EndGlobalSection
 EndGlobal
