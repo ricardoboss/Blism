@@ -1,0 +1,54 @@
+﻿@page "/"
+@using Blism.Language.Csharp
+@using Blism.Language.Dart
+@using Blism.Language.Yaml
+
+@code {
+
+	private const string CSharpSource = @"using System;
+
+namespace ConsoleApp;
+
+class Program
+{
+    static void Main(string[] arguments)
+    {
+        // This is a comment
+        Console.WriteLine(""Hello, World!"");
+    }
+}
+";
+
+	private const string YamlSource = @"# This is a comment
+name: Blism
+version: 1.0.0
+quotes: 'This is a string'
+
+# This is a list
+list:
+  - 1
+  - 2
+  - 3
+
+# This is a dictionary
+dictionary:
+  key1: value1
+  key2: value2
+    nested:
+      key3: value3
+";
+
+	private const string DartSource = @"import 'dart:async';
+
+void main() async {
+  // This is a comment
+  print('Hello, World!');
+}";
+
+}
+
+<SyntaxHighlighter TLanguage="CSharpHighlighterLanguage" TTokenType="CSharpTokenType" Code="@CSharpSource" Language="CSharpHighlighterLanguage.Instance"/>
+
+<SyntaxHighlighter TLanguage="YamlHighlighterLanguage" TTokenType="YamlTokenType" Code="@YamlSource" Language="YamlHighlighterLanguage.Instance"/>
+
+<SyntaxHighlighter TLanguage="DartHighlighterLanguage" TTokenType="DartTokenType" Code="@DartSource" Language="DartHighlighterLanguage.Instance"/>

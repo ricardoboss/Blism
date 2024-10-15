@@ -1,0 +1,35 @@
+﻿@typeparam TLanguage where TLanguage : IHighlighterLanguage<TTokenType>
+@typeparam TTokenType where TTokenType : Enum
+@inherits SyntaxHighlighterBase<TLanguage, TTokenType>
+
+@code {
+
+	[Parameter, EditorRequired]
+	public required string Code { get; set; }
+
+	private List<SyntaxToken<TTokenType>>? tokens;
+
+	private readonly Dictionary<TTokenType, string> classDefinitions = new();
+
+	protected override void OnParametersSet()
+	{
+		classDefinitions.Clear();
+		tokens = Language.Tokenizer.Tokenize(Code).ToList();
+
+		foreach (var token in tokens.Where(token => !classDefinitions.ContainsKey(token.Type)))
+		{
+			classDefinitions.Add(token.Type, Language.TypeHighlighter.GetCss(token.Type));
+		}
+	}
+
+}
+
+@if (tokens != null)
+{
+	<pre style="@Language.TypeHighlighter.GetDefaultCss()">
+		@foreach (var token in tokens)
+		{
+			<span style="@classDefinitions[token.Type]">@token.Value</span>
+		}
+	</pre>
+}
