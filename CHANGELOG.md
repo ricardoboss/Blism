@@ -1,3 +1,7 @@
+# Unreleased
+
+- Added `BashSyntaxHighlighter` component
+
 # 1.1.0
 
 - Added support for tokenizing Bash
