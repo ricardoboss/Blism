@@ -1,3 +1,7 @@
+# 1.2.1
+
+- Noop release
+
 # 1.2.0
 
 - Added `BashSyntaxHighlighter` component
