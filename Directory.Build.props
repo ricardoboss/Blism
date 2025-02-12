@@ -12,7 +12,7 @@
 		<PackageTags>syntax;highlighter;blazor;csharp;dart;yaml</PackageTags>
 
 		<Authors>Riardo Boss</Authors>
-		<Copyright>Copyright © 2024 Ricardo Boss</Copyright>
+		<Copyright>Copyright © 2025 Ricardo Boss</Copyright>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<PackageProjectUrl>https://github.com/ricardoboss/Blism</PackageProjectUrl>
