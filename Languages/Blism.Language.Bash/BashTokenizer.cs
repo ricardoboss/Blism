@@ -90,7 +90,7 @@ public class BashTokenizer : BaseTokenizer<BashTokenType>
 		yield return (new(@"""[^""]*"""), BashTokenType.String);
 		yield return (new(@"'[^']*'"), BashTokenType.String);
 		yield return (new(@"\d+(\.\d+)?"), BashTokenType.Number);
-		yield return (new("[a-zA-Z0-9_-]+:"), BashTokenType.Identifier);
+		yield return (new("[a-zA-Z0-9_-]+"), BashTokenType.Identifier);
 		yield return (new(@"\s+"), BashTokenType.Whitespace);
 		yield return (new(@"[\[\]{},:]"), BashTokenType.Punctuation);
 

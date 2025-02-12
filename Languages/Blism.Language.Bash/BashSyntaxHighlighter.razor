@@ -1,0 +1,14 @@
+@code {
+
+	[Parameter]
+	public required ITokenizer<BashTokenType> Tokenizer { get; set; } = BashTokenizer.Instance;
+
+	[Parameter]
+	public required ITokenTypeHighlighter<BashTokenType> Highlighter { get; set; } = BashDarkHighlighter.Instance;
+
+	[Parameter, EditorRequired]
+	public required string Code { get; set; }
+
+}
+
+<SyntaxHighlighter Tokenizer="@Tokenizer" Highlighter="@Highlighter" Code="@Code"/>
