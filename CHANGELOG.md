@@ -1,3 +1,7 @@
+# 1.3.0
+
+- Added `Style` parameter to all `SyntaxHighlighter` components
+
 # 1.2.4
 
 - Noop release

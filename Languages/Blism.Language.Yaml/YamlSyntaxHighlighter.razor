@@ -9,6 +9,9 @@
 	[Parameter, EditorRequired]
 	public required string Code { get; set; }
 
+	[Parameter]
+	public string? Style { get; set; }
+
 }
 
-<SyntaxHighlighter Tokenizer="@Tokenizer" Highlighter="@Highlighter" Code="@Code"/>
+<SyntaxHighlighter Tokenizer="@Tokenizer" Highlighter="@Highlighter" Code="@Code" Style="@Style"/>

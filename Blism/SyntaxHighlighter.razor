@@ -11,6 +11,9 @@
 	[Parameter, EditorRequired]
 	public required string Code { get; set; }
 
+	[Parameter]
+	public string? Style { get; set; }
+
 	private List<SyntaxToken<TTokenType>>? tokens;
 
 	private readonly Dictionary<TTokenType, string> classDefinitions = new();
@@ -30,7 +33,7 @@
 
 @if (tokens != null)
 {
-	<pre style="@Highlighter.GetDefaultCss()">
+	<pre style="@Highlighter.GetDefaultCss(); @Style">
 		@foreach (var token in tokens)
 		{
 			<span style="@classDefinitions[token.Type]">@token.Value</span>
