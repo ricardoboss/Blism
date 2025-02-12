@@ -1,5 +1,5 @@
-<Project Sdk="Microsoft.NET.Sdk">
-  <ItemGroup>
-    <ProjectReference Include="..\Blism\Blism.csproj" />
-  </ItemGroup>
+<Project Sdk="Microsoft.NET.Sdk.Razor">
+	<ItemGroup>
+		<ProjectReference Include="..\Blism\Blism.csproj"/>
+	</ItemGroup>
 </Project>

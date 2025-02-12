@@ -1,0 +1,20 @@
+@inherits BunitTestContext
+
+@code {
+	[Test]
+	public void TestHighlighter() {
+		const string source = "-keyword1a";
+
+		var tokenizer = new SimpleTokenizer();
+		var highlighter = new SimpleHighlighter();
+
+		var component = Render(@<SyntaxHighlighter Tokenizer="@tokenizer" Highlighter="@highlighter" Code="@source"/>);
+
+		component.MarkupMatches(@<pre style="color: red;" diff:whitespace="RemoveWhitespaceNodes">
+  <span style="color: yellow;">-</span>
+  <span style="color: purple;">keyword</span>
+  <span style="color: green;">1</span>
+  <span style="color: blue;">a</span>
+</pre>);
+	}
+}
