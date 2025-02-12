@@ -85,24 +85,20 @@ public class BashTokenizer : BaseTokenizer<BashTokenType>
 
 	protected override IEnumerable<(Regex regex, BashTokenType type)> GetTokenDefinitions()
 	{
-		yield return (new Regex(@"#![^\n]*"), BashTokenType.SheBang);
-		yield return (new Regex("#.*"), BashTokenType.Comment);
-		yield return (new Regex(@"""[^""]*"""), BashTokenType.String);
-		yield return (new Regex(@"'[^']*'"), BashTokenType.String);
-		yield return (new Regex(@"\d+(\.\d+)?"), BashTokenType.Number);
-		yield return (new Regex("[a-zA-Z0-9_-]+:"), BashTokenType.Identifier);
-		yield return (new Regex(@"\s+"), BashTokenType.Whitespace);
-		yield return (new Regex(@"[\[\]{},:]"), BashTokenType.Punctuation);
+		yield return (new(@"#![^\n]*"), BashTokenType.SheBang);
+		yield return (new("#.*"), BashTokenType.Comment);
+		yield return (new(@"""[^""]*"""), BashTokenType.String);
+		yield return (new(@"'[^']*'"), BashTokenType.String);
+		yield return (new(@"\d+(\.\d+)?"), BashTokenType.Number);
+		yield return (new("[a-zA-Z0-9_-]+:"), BashTokenType.Identifier);
+		yield return (new(@"\s+"), BashTokenType.Whitespace);
+		yield return (new(@"[\[\]{},:]"), BashTokenType.Punctuation);
 
 		foreach (var keyword in Keywords)
-		{
-			yield return (new Regex(@"\b" + Regex.Escape(keyword) + @"\b"), BashTokenType.Keyword);
-		}
+			yield return (new(@"\b" + Regex.Escape(keyword) + @"\b"), BashTokenType.Keyword);
 
 		foreach (var command in Commands)
-		{
-			yield return (new Regex(@"\b" + Regex.Escape(command) + @"\b"), BashTokenType.Command);
-		}
+			yield return (new(@"\b" + Regex.Escape(command) + @"\b"), BashTokenType.Command);
 	}
 
 	protected override BashTokenType UnknownTokenType => BashTokenType.Unknown;

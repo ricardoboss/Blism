@@ -2,13 +2,13 @@
 
 @code {
 
-	[Parameter, EditorRequired]
+	[Parameter][EditorRequired]
 	public required ITokenizer<TTokenType> Tokenizer { get; set; }
 
-	[Parameter, EditorRequired]
+	[Parameter][EditorRequired]
 	public required ITokenTypeHighlighter<TTokenType> Highlighter { get; set; }
 
-	[Parameter, EditorRequired]
+	[Parameter][EditorRequired]
 	public required string Code { get; set; }
 
 	private List<SyntaxToken<TTokenType>>? tokens;

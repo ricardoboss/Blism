@@ -27,20 +27,18 @@ public class CSharpTokenizer : ITokenizer<CSharpTokenType>
 	{
 		var tokenDefinitions = new List<(Regex regex, CSharpTokenType type)>
 		{
-			(new Regex(@"\/\/.*"), CSharpTokenType.Comment),
-			(new Regex(@"\/\*[\s\S]*?\*\/"), CSharpTokenType.Comment),
-			(new Regex(@"\s+"), CSharpTokenType.Whitespace),
-			(new Regex(@"\d+(\.\d+)?"), CSharpTokenType.Number),
-			(new Regex(@"""[^""]*"""), CSharpTokenType.String),
-			(new Regex(Punctuation), CSharpTokenType.Punctuation),
-			(new Regex(@"\b[_a-zA-Z][_a-zA-Z0-9]*\b"), CSharpTokenType.Identifier),
+			(new(@"\/\/.*"), CSharpTokenType.Comment),
+			(new(@"\/\*[\s\S]*?\*\/"), CSharpTokenType.Comment),
+			(new(@"\s+"), CSharpTokenType.Whitespace),
+			(new(@"\d+(\.\d+)?"), CSharpTokenType.Number),
+			(new(@"""[^""]*"""), CSharpTokenType.String),
+			(new(Punctuation), CSharpTokenType.Punctuation),
+			(new(@"\b[_a-zA-Z][_a-zA-Z0-9]*\b"), CSharpTokenType.Identifier),
 		};
 
 		foreach (var keyword in Keywords)
-		{
 			tokenDefinitions.Insert(0,
-				(new Regex(@"\b" + Regex.Escape(keyword) + @"\b"), CSharpTokenType.Keyword));
-		}
+				(new(@"\b" + Regex.Escape(keyword) + @"\b"), CSharpTokenType.Keyword));
 
 		var index = 0;
 

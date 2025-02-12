@@ -8,13 +8,13 @@ public class YamlTokenizer : BaseTokenizer<YamlTokenType>
 
 	protected override IEnumerable<(Regex regex, YamlTokenType type)> GetTokenDefinitions()
 	{
-		yield return (new Regex(@"\s+"), YamlTokenType.Whitespace);
-		yield return (new Regex(@"\#.*"), YamlTokenType.Comment);
-		yield return (new Regex(@"""[^""]*"""), YamlTokenType.Scalar);
-		yield return (new Regex("'[^']*'"), YamlTokenType.Scalar);
-		yield return (new Regex("[a-zA-Z0-9_-]+:"), YamlTokenType.Key);
-		yield return (new Regex(@"[\[\]{},:]"), YamlTokenType.Punctuation);
-		yield return (new Regex(@"[a-zA-Z0-9_\-.]+"), YamlTokenType.Value);
+		yield return (new(@"\s+"), YamlTokenType.Whitespace);
+		yield return (new(@"\#.*"), YamlTokenType.Comment);
+		yield return (new(@"""[^""]*"""), YamlTokenType.Scalar);
+		yield return (new("'[^']*'"), YamlTokenType.Scalar);
+		yield return (new("[a-zA-Z0-9_-]+:"), YamlTokenType.Key);
+		yield return (new(@"[\[\]{},:]"), YamlTokenType.Punctuation);
+		yield return (new(@"[a-zA-Z0-9_\-.]+"), YamlTokenType.Value);
 	}
 
 	protected override YamlTokenType UnknownTokenType => YamlTokenType.Unknown;
