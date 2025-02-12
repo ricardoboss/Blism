@@ -28,7 +28,7 @@ jobs:
         run: dotnet nuget push Blism/bin/Release/*.nupkg -k ${{ secrets.NUGET_API_KEY }} -s https://api.nuget.org/v3/index.json
       - name: Publish Language Packages
         run: |
-          for folder in "$dir"/*/; do
+          for folder in "Languages"/*/; do
             folder_name=$(basename "$folder")
             [[ "$folder_name" =~ \.Test$ ]] && continue
 
