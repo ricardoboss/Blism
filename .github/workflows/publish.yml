@@ -35,7 +35,7 @@ jobs:
             echo "::group::Publishing $folder_name"
 
             {
-              dotnet nuget push $folder_name/bin/Release/*.nupkg -k ${{ secrets.NUGET_API_KEY }} -s https://api.nuget.org/v3/index.json
+              dotnet nuget push Languages/$folder_name/bin/Release/*.nupkg -k ${{ secrets.NUGET_API_KEY }} -s https://api.nuget.org/v3/index.json
             } || {
               echo "::error::Failed to publish $folder_name"
             }
