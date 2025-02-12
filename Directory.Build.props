@@ -39,4 +39,8 @@
 		<None Include="..\LICENSE.md" Pack="true" PackagePath="\" />
 		<None Include="..\README.md" Pack="true" PackagePath="\" />
 	</ItemGroup>
+
+	<!-- For test projects, import additional props -->
+	<Import Project="Test.props" Condition="$(MSBuildProjectFile.EndsWith('.Test.csproj'))"/>
+
 </Project>
