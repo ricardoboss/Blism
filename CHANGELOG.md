@@ -1,3 +1,7 @@
+# 1.2.3
+
+- Noop release
+
 # 1.2.2
 
 - Noop release
