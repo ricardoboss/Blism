@@ -2,13 +2,7 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blism", "Blism\Blism.csproj", "{AC7A7808-E60E-46D4-ACE4-10B440149D4D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blism.Language.CSharp", "Blism.Language.CSharp\Blism.Language.CSharp.csproj", "{DB839967-337C-4E67-A8BC-F8059FA8B84F}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blism.Example", "Blism.Example\Blism.Example.csproj", "{AFED1B67-BE13-4E36-919E-77B76BADFDC7}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blism.Language.Yaml", "Blism.Language.Yaml\Blism.Language.Yaml.csproj", "{E78FFAF9-4C38-4FB6-B043-1BD6CDA84065}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blism.Language.Dart", "Blism.Language.Dart\Blism.Language.Dart.csproj", "{78E3413E-D0D1-495C-A480-2BA870E11924}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{EA59A048-D32D-410C-832C-5E3B81196603}"
 	ProjectSection(SolutionItems) = preProject
@@ -34,7 +28,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{
 		.github\workflows\publish.yml = .github\workflows\publish.yml
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blism.Language.Bash", "Blism.Language.Bash\Blism.Language.Bash.csproj", "{84EC1C67-A072-4F3E-A347-28A49C539590}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Languages", "Languages", "{9BE46BCC-01CF-4382-A203-95D4647C4947}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blism.Language.Bash", "Languages\Blism.Language.Bash\Blism.Language.Bash.csproj", "{63AB08BC-2D32-4B3F-AF99-FB252F21D9D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blism.Language.CSharp", "Languages\Blism.Language.CSharp\Blism.Language.CSharp.csproj", "{6A153A1F-81B5-4886-A2A2-6E60EA9F0DB8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blism.Language.Dart", "Languages\Blism.Language.Dart\Blism.Language.Dart.csproj", "{E9C67B72-B117-46BA-AAF7-CBDA3DF75154}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blism.Language.Yaml", "Languages\Blism.Language.Yaml\Blism.Language.Yaml.csproj", "{7E017A55-0502-49FB-AAB9-97C2C657F4EB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -46,30 +48,34 @@ Global
 		{AC7A7808-E60E-46D4-ACE4-10B440149D4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AC7A7808-E60E-46D4-ACE4-10B440149D4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AC7A7808-E60E-46D4-ACE4-10B440149D4D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DB839967-337C-4E67-A8BC-F8059FA8B84F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DB839967-337C-4E67-A8BC-F8059FA8B84F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DB839967-337C-4E67-A8BC-F8059FA8B84F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DB839967-337C-4E67-A8BC-F8059FA8B84F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{AFED1B67-BE13-4E36-919E-77B76BADFDC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{AFED1B67-BE13-4E36-919E-77B76BADFDC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AFED1B67-BE13-4E36-919E-77B76BADFDC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AFED1B67-BE13-4E36-919E-77B76BADFDC7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E78FFAF9-4C38-4FB6-B043-1BD6CDA84065}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E78FFAF9-4C38-4FB6-B043-1BD6CDA84065}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E78FFAF9-4C38-4FB6-B043-1BD6CDA84065}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E78FFAF9-4C38-4FB6-B043-1BD6CDA84065}.Release|Any CPU.Build.0 = Release|Any CPU
-		{78E3413E-D0D1-495C-A480-2BA870E11924}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{78E3413E-D0D1-495C-A480-2BA870E11924}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{78E3413E-D0D1-495C-A480-2BA870E11924}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{78E3413E-D0D1-495C-A480-2BA870E11924}.Release|Any CPU.Build.0 = Release|Any CPU
-		{84EC1C67-A072-4F3E-A347-28A49C539590}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{84EC1C67-A072-4F3E-A347-28A49C539590}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{84EC1C67-A072-4F3E-A347-28A49C539590}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{84EC1C67-A072-4F3E-A347-28A49C539590}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63AB08BC-2D32-4B3F-AF99-FB252F21D9D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63AB08BC-2D32-4B3F-AF99-FB252F21D9D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63AB08BC-2D32-4B3F-AF99-FB252F21D9D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63AB08BC-2D32-4B3F-AF99-FB252F21D9D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A153A1F-81B5-4886-A2A2-6E60EA9F0DB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A153A1F-81B5-4886-A2A2-6E60EA9F0DB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A153A1F-81B5-4886-A2A2-6E60EA9F0DB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A153A1F-81B5-4886-A2A2-6E60EA9F0DB8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9C67B72-B117-46BA-AAF7-CBDA3DF75154}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9C67B72-B117-46BA-AAF7-CBDA3DF75154}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9C67B72-B117-46BA-AAF7-CBDA3DF75154}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9C67B72-B117-46BA-AAF7-CBDA3DF75154}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E017A55-0502-49FB-AAB9-97C2C657F4EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E017A55-0502-49FB-AAB9-97C2C657F4EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E017A55-0502-49FB-AAB9-97C2C657F4EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E017A55-0502-49FB-AAB9-97C2C657F4EB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{850B4480-5E9D-4F4C-B132-9E222E83E571} = {EA59A048-D32D-410C-832C-5E3B81196603}
 		{7C7FE3A1-6175-4031-A81E-A9DA535E9703} = {850B4480-5E9D-4F4C-B132-9E222E83E571}
 		{FA18B7CB-85D1-45B6-A4BA-739EC489B3F1} = {850B4480-5E9D-4F4C-B132-9E222E83E571}
+		{63AB08BC-2D32-4B3F-AF99-FB252F21D9D9} = {9BE46BCC-01CF-4382-A203-95D4647C4947}
+		{6A153A1F-81B5-4886-A2A2-6E60EA9F0DB8} = {9BE46BCC-01CF-4382-A203-95D4647C4947}
+		{E9C67B72-B117-46BA-AAF7-CBDA3DF75154} = {9BE46BCC-01CF-4382-A203-95D4647C4947}
+		{7E017A55-0502-49FB-AAB9-97C2C657F4EB} = {9BE46BCC-01CF-4382-A203-95D4647C4947}
 	EndGlobalSection
 EndGlobal
