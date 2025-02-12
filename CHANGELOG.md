@@ -1,6 +1,9 @@
 # Unreleased
 
 - Added `BashSyntaxHighlighter` component
+- Added `CSharpSyntaxHighlighter` component
+- Added `DartSyntaxHighlighter` component
+- Added `YamlSyntaxHighlighter` component
 
 # 1.1.0
 

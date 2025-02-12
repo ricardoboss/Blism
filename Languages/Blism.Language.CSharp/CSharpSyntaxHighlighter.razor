@@ -1,0 +1,14 @@
+@code {
+
+	[Parameter]
+	public required ITokenizer<CSharpTokenType> Tokenizer { get; set; } = CSharpTokenizer.Instance;
+
+	[Parameter]
+	public required ITokenTypeHighlighter<CSharpTokenType> Highlighter { get; set; } = CSharpDarkHighlighter.Instance;
+
+	[Parameter, EditorRequired]
+	public required string Code { get; set; }
+
+}
+
+<SyntaxHighlighter Tokenizer="@Tokenizer" Highlighter="@Highlighter" Code="@Code"/>

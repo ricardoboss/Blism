@@ -1,0 +1,14 @@
+@code {
+
+	[Parameter]
+	public required ITokenizer<DartTokenType> Tokenizer { get; set; } = DartTokenizer.Instance;
+
+	[Parameter]
+	public required ITokenTypeHighlighter<DartTokenType> Highlighter { get; set; } = DartDarkHighlighter.Instance;
+
+	[Parameter, EditorRequired]
+	public required string Code { get; set; }
+
+}
+
+<SyntaxHighlighter Tokenizer="@Tokenizer" Highlighter="@Highlighter" Code="@Code"/>

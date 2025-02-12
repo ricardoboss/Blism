@@ -1,6 +1,6 @@
 ﻿@page "/"
 @using Blism.Language.Bash
-@using Blism.Language.Csharp
+@using Blism.Language.CSharp
 @using Blism.Language.Dart
 @using Blism.Language.Yaml
 
@@ -61,11 +61,10 @@ fi
 
 }
 
-<SyntaxHighlighter Code="@CSharpSource" Tokenizer="CSharpTokenizer.Instance"
-                   Highlighter="CSharpDarkHighlighter.Instance"/>
+<CSharpSyntaxHighlighter Code="@CSharpSource" />
 
-<SyntaxHighlighter Code="@YamlSource" Tokenizer="YamlTokenizer.Instance" Highlighter="YamlDarkHighlighter.Instance"/>
+<YamlSyntaxHighlighter Code="@YamlSource" />
 
-<SyntaxHighlighter Code="@DartSource" Tokenizer="DartTokenizer.Instance" Highlighter="DartDarkHighlighter.Instance"/>
+<DartSyntaxHighlighter Code="@DartSource" />
 
 <BashSyntaxHighlighter Code="@BashSource" />

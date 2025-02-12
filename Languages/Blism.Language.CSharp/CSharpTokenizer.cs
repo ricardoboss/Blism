@@ -1,6 +1,6 @@
 ﻿using System.Text.RegularExpressions;
 
-namespace Blism.Language.Csharp;
+namespace Blism.Language.CSharp;
 
 public class CSharpTokenizer : ITokenizer<CSharpTokenType>
 {

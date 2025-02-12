@@ -1,4 +1,4 @@
-﻿namespace Blism.Language.Csharp;
+﻿namespace Blism.Language.CSharp;
 
 public class CSharpDarkHighlighter : ITokenTypeHighlighter<CSharpTokenType>
 {
