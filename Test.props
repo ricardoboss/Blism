@@ -6,6 +6,10 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+		<AssemblyAttribute Include="System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<PackageReference Include="bunit"/>
 		<PackageReference Include="coverlet.collector"/>
 		<PackageReference Include="Microsoft.NET.Test.Sdk"/>
