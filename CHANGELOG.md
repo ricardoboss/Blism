@@ -1,3 +1,7 @@
+# 1.3.2
+
+- Noop release
+
 # 1.3.1
 
 - Fix parsing of unquoted URLs in Bash
