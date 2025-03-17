@@ -1,3 +1,7 @@
+# Unreleased
+
+- Fix parsing of unquoted URLs in Bash
+
 # 1.3.0
 
 - Added `Style` parameter to all `SyntaxHighlighter` components
