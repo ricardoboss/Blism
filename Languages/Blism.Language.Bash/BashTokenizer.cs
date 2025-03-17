@@ -88,8 +88,10 @@ public class BashTokenizer : BaseTokenizer<BashTokenType>
 		yield return (new(@"#![^\n]*"), BashTokenType.SheBang);
 		yield return (new("#.*"), BashTokenType.Comment);
 		yield return (new(@"""[^""]*"""), BashTokenType.String);
-		yield return (new(@"'[^']*'"), BashTokenType.String);
-		yield return (new(@"\d+(\.\d+)?"), BashTokenType.Number);
+		yield return (new("'[^']*'"), BashTokenType.String);
+		yield return (new(@"\w+\://[^\s]+"), BashTokenType.String); // treat URLs as unquoted strings
+		yield return (new("--?[a-zA-Z0-9_-]+=?"), BashTokenType.Option);
+		yield return (new(@"-?\d+(\.\d+)?"), BashTokenType.Number);
 		yield return (new("[a-zA-Z0-9_-]+"), BashTokenType.Identifier);
 		yield return (new(@"\s+"), BashTokenType.Whitespace);
 		yield return (new(@"[\[\]{},:]"), BashTokenType.Punctuation);

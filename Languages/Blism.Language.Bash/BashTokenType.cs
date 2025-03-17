@@ -12,4 +12,5 @@ public enum BashTokenType
 	Keyword,
 	SheBang,
 	Command,
+	Option,
 }
