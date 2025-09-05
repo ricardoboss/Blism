@@ -1,3 +1,7 @@
+# Unreleased
+
+- Updated to .NET 9
+
 # 1.3.2
 
 - Noop release
