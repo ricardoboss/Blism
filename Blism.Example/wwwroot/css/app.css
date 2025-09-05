@@ -75,3 +75,20 @@
 code {
     color: #c02d76;
 }
+
+html, body {
+    background: #1e1e1e;
+    font-family: sans-serif;
+    color: white;
+}
+
+h1 {
+    margin-bottom: 0;
+}
+
+pre {
+    margin: 0.5rem;
+    padding: 0.5rem;
+    border: #2f2f2f solid 1px;
+    border-radius: 0.5rem;
+}
