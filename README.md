@@ -14,10 +14,8 @@ dotnet add package Blism.Language.CSharp # Repeat for other languages
 
 ## Usage
 
-```html
-
-<SyntaxHighlighter Code="@CSharpSource" Tokenizer="CSharpTokenizer.Instance"
-                   Highlighter="CSharpDarkHighlighter.Instance"/>
+```razorhtmldialect
+<CSharpSyntaxHighlighter Code="@SourceCode"/>
 ```
 
 ## Supported languages
