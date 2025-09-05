@@ -76,19 +76,38 @@ code {
     color: #c02d76;
 }
 
+* {
+    box-sizing: border-box;
+}
+
 html, body {
     background: #1e1e1e;
     font-family: sans-serif;
     color: white;
+    padding: 0;
+    margin: 0;
 }
 
 h1 {
-    margin-bottom: 0;
+    margin: 0;
 }
 
-pre {
-    margin: 0.5rem;
-    padding: 0.5rem;
-    border: #2f2f2f solid 1px;
-    border-radius: 0.5rem;
+:root {
+    --card-gap: 1rem;
+    --card-padding: 0.5rem;
+    --card-border-width: 1px;
+}
+
+.languages-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--card-gap);
+    padding: 1rem;
+}
+
+.language-card {
+    flex: 0 0 auto;
+    padding: var(--card-padding);
+    border: #2f2f2f solid var(--card-border-width);
+    border-radius: var(--card-padding);
 }
