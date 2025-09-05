@@ -15,7 +15,9 @@ dotnet add package Blism.Language.CSharp # Repeat for other languages
 ## Usage
 
 ```html
-<SyntaxHighlighter Code="@CSharpSource" Tokenizer="CSharpTokenizer.Instance" Highlighter="CSharpDarkHighlighter.Instance"/>
+
+<SyntaxHighlighter Code="@CSharpSource" Tokenizer="CSharpTokenizer.Instance"
+                   Highlighter="CSharpDarkHighlighter.Instance"/>
 ```
 
 ## Supported languages
@@ -24,6 +26,9 @@ dotnet add package Blism.Language.CSharp # Repeat for other languages
 - Dart
 - YAML
 - Bash
+
+Want to add more? See [Languages to add](https://github.com/ricardoboss/Blism/issues/1)
+and [CONTRIBUTING.md](CONTRIBUTING.md)
 
 ## License
 
