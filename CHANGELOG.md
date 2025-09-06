@@ -1,4 +1,4 @@
-# Unreleased
+# 1.3.3
 
 - Updated to .NET 9
 - Added support for tokenizing PHP
