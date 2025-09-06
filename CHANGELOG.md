@@ -1,6 +1,9 @@
 # Unreleased
 
 - Updated to .NET 9
+- Added support for tokenizing PHP
+- Added dark theme for PHP
+- Added `PhpSyntaxHighlighter` component
 
 # 1.3.2
 
