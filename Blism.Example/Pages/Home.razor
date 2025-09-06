@@ -1,8 +1,10 @@
 ﻿@page "/"
+
 @using Blism.Language.Bash
 @using Blism.Language.CSharp
 @using Blism.Language.Dart
 @using Blism.Language.Yaml
+@using Blism.Language.Php
 
 @code {
 
@@ -59,6 +61,26 @@ if [[ $1 == '--help' ]]; then
 fi
 ";
 
+	private const string PhpSource = @"<?php
+declare(strict_types=1);
+
+namespace App\Commands;
+
+use App\Services\Console as Output;
+
+readonly class HelloCommand {
+	use Output {
+		Output::println as writeln;
+	}
+
+	public function __construct(
+		private string $who,
+	) {
+		// greet the person
+		$this->writeln(""Hello, $who!"");
+	}
+}";
+
 }
 
 <div class="languages-wrapper">
@@ -78,5 +100,8 @@ fi
 		<h1>Bash</h1>
 		<BashSyntaxHighlighter Code="@BashSource"/>
 	</div>
+	<div class="language-card">
+		<h1>PHP</h1>
+		<PhpSyntaxHighlighter Code="@PhpSource"/>
+	</div>
 </div>
-
