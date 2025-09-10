@@ -37,7 +37,7 @@ For our example language, the project name would be `Blism.Language.FooLang`.
 
 ### Implement the tokenizer
 
-The implement the tokenizer, you first need to define your languages token types.
+To implement the tokenizer, you first need to define your languages token types.
 These are like the building blocks of any programming language.
 
 The token types must be an enum named `[LANGUAGE NAME]TokenType`.
