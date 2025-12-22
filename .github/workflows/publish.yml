@@ -31,28 +31,40 @@ jobs:
       - name: Publish Blism.Blazor Package
         run: dotnet nuget push Blism.Blazor/bin/Release/*.nupkg -k ${{ secrets.NUGET_API_KEY }} -s https://api.nuget.org/v3/index.json
 
-      - name: Publish Language Packages
+      - name: Publish Other Packages
+        shell: bash
         run: |
-          for language in Languages/*/; do
-            language_name=$(basename "$language")
+          set -euo pipefail
+          shopt -s nullglob
 
-            for package in "$language"*/; do
-              package_name=$(basename "$package")
-              [ [ "$package_name" =~ \.Test$ ] ] && continue
+          publish_folder() {
+            local base="$1"
+            local label="$2"
 
-              echo "::group::Publishing $language_name / $package_name"
+            for dir in "$base"*/; do
+              name=$(basename "$dir")
+              [[ "$name" =~ \.Test$ ]] && continue
 
-              {
-                dotnet nuget push "$package/bin/Release/"*.nupkg \
-                -k ${{ secrets.NUGET_API_KEY }} \
-                -s https://api.nuget.org/v3/index.json
-              } || {
-                echo "::error::Failed to publish $language_name / $package_name"
-              }
+              echo "::group::Publishing ${label}${name}"
+
+              if ! dotnet nuget push "$dir/bin/Release/"*.nupkg \
+                -k "${{ secrets.NUGET_API_KEY }}" \
+                -s https://api.nuget.org/v3/index.json; then
+                echo "::error::Failed to publish ${label}${name}"
+              fi
 
               echo "::endgroup::"
             done
+          }
+
+          # Languages/<Language>/<Package>
+          for language in Languages/*/; do
+            language_name=$(basename "$language")
+            publish_folder "$language" "$language_name / "
           done
+
+          # Themes/<Project>
+          publish_folder "Themes/" ""
 
       - name: Publish GitHub Release
         uses: softprops/action-gh-release@v2
