@@ -85,7 +85,7 @@ public class PhpTokenizer : BaseTokenizer<PhpTokenType>
 	protected override IEnumerable<(Regex regex, PhpTokenType type)> GetTokenDefinitions()
 	{
 		yield return (new(@"\$this"), PhpTokenType.Keyword);
-		yield return (new(@"\$\w+"), PhpTokenType.Variable);
+		yield return (new(@"\$\w+"), PhpTokenType.Identifier);
 		yield return (new(@"""[^""]*"""), PhpTokenType.String);
 		yield return (new("'[^']*'"), PhpTokenType.String);
 		yield return (new(@"[0-9]+(\.[0-9]+)?"), PhpTokenType.Number);
@@ -95,7 +95,7 @@ public class PhpTokenizer : BaseTokenizer<PhpTokenType>
 		foreach (var keyword in Keywords)
 			yield return (new(@"\b" + Regex.Escape(keyword) + @"\b"), PhpTokenType.Keyword);
 
-		yield return (new("[a-zA-Z_][a-zA-Z0-9_]*"), PhpTokenType.Identifier);
+		yield return (new("[a-zA-Z_][a-zA-Z0-9_]*"), PhpTokenType.Type);
 		yield return (new(@"\s+"), PhpTokenType.Whitespace);
 	}
 

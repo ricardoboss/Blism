@@ -9,5 +9,5 @@ public enum PhpTokenType
 	Number,
 	Comment,
 	Identifier,
-	Variable,
+	Type,
 }

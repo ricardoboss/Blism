@@ -1,11 +1,16 @@
 <Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
 
+	<PropertyGroup>
+		<AttachWeakETagToCompressedAssetsDuringDevelopment>true</AttachWeakETagToCompressedAssetsDuringDevelopment>
+	</PropertyGroup>
+
 	<ItemGroup>
 		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly"/>
 		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" PrivateAssets="all"/>
 	</ItemGroup>
 
 	<ItemGroup>
+		<ProjectReference Include="..\Themes\Blism.Theme.DefaultDark\Blism.Theme.DefaultDark.csproj" />
 		<ProjectReference Include="..\Languages\Bash\Blism.Language.Bash.Blazor\Blism.Language.Bash.Blazor.csproj"/>
 		<ProjectReference Include="..\Languages\CSharp\Blism.Language.CSharp.Blazor\Blism.Language.CSharp.Blazor.csproj"/>
 		<ProjectReference Include="..\Languages\Dart\Blism.Language.Dart.Blazor\Blism.Language.Dart.Blazor.csproj"/>

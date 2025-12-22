@@ -1,12 +1,16 @@
 ﻿@page "/"
 
+@using Blism.Core
 @using Blism.Language.Bash.Blazor
 @using Blism.Language.CSharp.Blazor
 @using Blism.Language.Dart.Blazor
 @using Blism.Language.Yaml.Blazor
 @using Blism.Language.Php.Blazor
+@using Blism.Theme.DefaultDark
 
 @code {
+
+	private readonly ITheme Theme = DefaultDarkTheme.Instance;
 
 	private const string CSharpSource = @"using System;
 
@@ -86,22 +90,22 @@ readonly class HelloCommand {
 <div class="languages-wrapper">
 	<div class="language-card">
 		<h1>C#</h1>
-		<CSharpSyntaxHighlighter Code="@CSharpSource"/>
+		<CSharpSyntaxHighlighter Code="@CSharpSource" Theme="@Theme" />
 	</div>
 	<div class="language-card">
 		<h1>YAML</h1>
-		<YamlSyntaxHighlighter Code="@YamlSource"/>
+		<YamlSyntaxHighlighter Code="@YamlSource" Theme="@Theme"/>
 	</div>
 	<div class="language-card">
 		<h1>Dart</h1>
-		<DartSyntaxHighlighter Code="@DartSource"/>
+		<DartSyntaxHighlighter Code="@DartSource" Theme="@Theme"/>
 	</div>
 	<div class="language-card">
 		<h1>Bash</h1>
-		<BashSyntaxHighlighter Code="@BashSource"/>
+		<BashSyntaxHighlighter Code="@BashSource" Theme="@Theme"/>
 	</div>
 	<div class="language-card">
 		<h1>PHP</h1>
-		<PhpSyntaxHighlighter Code="@PhpSource"/>
+		<PhpSyntaxHighlighter Code="@PhpSource" Theme="@Theme"/>
 	</div>
 </div>

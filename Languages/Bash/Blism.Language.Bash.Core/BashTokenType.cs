@@ -13,4 +13,5 @@ public enum BashTokenType
 	SheBang,
 	Command,
 	Option,
+	PositionalParameter,
 }

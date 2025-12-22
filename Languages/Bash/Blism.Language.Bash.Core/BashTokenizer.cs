@@ -93,9 +93,10 @@ public class BashTokenizer : BaseTokenizer<BashTokenType>
 		yield return (new(@"\w+\://[^\s]+"), BashTokenType.String); // treat URLs as unquoted strings
 		yield return (new("--?[a-zA-Z0-9_-]+=?"), BashTokenType.Option);
 		yield return (new(@"-?\d+(\.\d+)?"), BashTokenType.Number);
+		yield return (new(@"\$[0-9]+"), BashTokenType.PositionalParameter);
 		yield return (new("[a-zA-Z0-9_-]+"), BashTokenType.Identifier);
 		yield return (new(@"\s+"), BashTokenType.Whitespace);
-		yield return (new(@"[\[\]{},:]"), BashTokenType.Punctuation);
+		yield return (new(@"[\[\]{},:=;]"), BashTokenType.Punctuation);
 
 		foreach (var keyword in Keywords)
 			yield return (new(@"\b" + Regex.Escape(keyword) + @"\b"), BashTokenType.Keyword);

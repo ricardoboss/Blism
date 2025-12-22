@@ -1,3 +1,4 @@
+@using Blism.Blazor
 @using Blism.Core
 @using Blism.Language.Dart.Core
 
@@ -7,7 +8,10 @@
 	public required ITokenizer<DartTokenType> Tokenizer { get; set; } = DartTokenizer.Instance;
 
 	[Parameter]
-	public required ITokenTypeHighlighter<DartTokenType> Highlighter { get; set; } = DartDarkHighlighter.Instance;
+	public required ITokenStyleMapper<DartTokenType> StyleMapper { get; set; } = DartTokenStyleMapper.Instance;
+
+	[Parameter, EditorRequired]
+	public required ITheme Theme { get; set; }
 
 	[Parameter, EditorRequired]
 	public required string Code { get; set; }
@@ -17,4 +21,4 @@
 
 }
 
-<SyntaxHighlighter Tokenizer="@Tokenizer" Highlighter="@Highlighter" Code="@Code" Style="@Style"/>
+<SyntaxHighlighter Tokenizer="@Tokenizer" Theme="@Theme" StyleMapper="@StyleMapper" Code="@Code" Style="@Style"/>

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Immutable;
 using Blism.Language.Bash.Core;
 
-namespace Blism.Language.Bash.Test;
+namespace Blism.Language.Bash.Blazor.Test;
 
 public static class BashTokenizerTest
 {

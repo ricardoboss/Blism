@@ -59,7 +59,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Yaml", "Yaml", "{EE004059-6
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blism.Language.Bash.Core", "Languages\Bash\Blism.Language.Bash.Core\Blism.Language.Bash.Core.csproj", "{988AB0A1-226A-4CE7-A4B4-18229B791FAB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blism.Language.Bash.Test", "Languages\Bash\Blism.Language.Bash.Test\Blism.Language.Bash.Test.csproj", "{2485F2BF-8742-4F5D-9C35-699150CAAF9F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blism.Language.Bash.Blazor.Test", "Languages\Bash\Blism.Language.Bash.Blazor.Test\Blism.Language.Bash.Blazor.Test.csproj", "{2485F2BF-8742-4F5D-9C35-699150CAAF9F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blism.Language.CSharp.Core", "Languages\CSharp\Blism.Language.CSharp.Core\Blism.Language.CSharp.Core.csproj", "{A1625A7F-14AD-4256-8463-B9EB7EAB9CA4}"
 EndProject
@@ -68,6 +68,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blism.Language.Php.Core", "Languages\Php\Blism.Language.Php.Core\Blism.Language.Php.Core.csproj", "{E51002DB-AC28-4494-AF5E-82AB2712C1F7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blism.Language.Yaml.Core", "Languages\Yaml\Blism.Language.Yaml.Core\Blism.Language.Yaml.Core.csproj", "{DFEA9E57-2D1A-4791-9991-F4F96CC92BEB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Themes", "Themes", "{9425BDE2-55FB-498D-A33F-DDE57B6919FD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blism.Theme.DefaultDark", "Themes\Blism.Theme.DefaultDark\Blism.Theme.DefaultDark.csproj", "{9443EC35-2D94-41E6-B187-B41E24161F31}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -135,6 +139,10 @@ Global
 		{DFEA9E57-2D1A-4791-9991-F4F96CC92BEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DFEA9E57-2D1A-4791-9991-F4F96CC92BEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DFEA9E57-2D1A-4791-9991-F4F96CC92BEB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9443EC35-2D94-41E6-B187-B41E24161F31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9443EC35-2D94-41E6-B187-B41E24161F31}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9443EC35-2D94-41E6-B187-B41E24161F31}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9443EC35-2D94-41E6-B187-B41E24161F31}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{850B4480-5E9D-4F4C-B132-9E222E83E571} = {EA59A048-D32D-410C-832C-5E3B81196603}
@@ -156,5 +164,6 @@ Global
 		{9D9D4BEF-BB94-452D-B913-B0A702CEE6E6} = {FAFC4266-C654-469C-8D91-B02BE40362F3}
 		{E51002DB-AC28-4494-AF5E-82AB2712C1F7} = {B93013E4-C8C3-41ED-9B0B-78A9F2EEDA94}
 		{DFEA9E57-2D1A-4791-9991-F4F96CC92BEB} = {EE004059-6F78-4E06-B324-2C4C7E61681A}
+		{9443EC35-2D94-41E6-B187-B41E24161F31} = {9425BDE2-55FB-498D-A33F-DDE57B6919FD}
 	EndGlobalSection
 EndGlobal

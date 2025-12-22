@@ -1,0 +1,107 @@
+﻿@inherits BunitContext
+
+@code {
+	[Test]
+	public void TestHelloWorld() {
+		const string source = "echo 'Hello, World!'";
+
+		var theme = new TestTheme();
+
+		var component = Render(@<BashSyntaxHighlighter Theme="@theme" Code="@source"/>);
+
+		component.MarkupMatches(@<pre style="background:#1e1e1e;color:#d4d4d4;" diff:whitespace="RemoveWhitespaceNodes">
+  <span style="color:#94dbfd;">echo</span>
+  <span style=""></span>
+  <span style="color:#cc884e;">'Hello, World!'</span>
+</pre>);
+	}
+
+	[Test]
+	public void TestExampleScript() {
+		const string source = @"#!/bin/bash
+
+# This is a comment
+echo 'Hello, World!'
+
+if [[ $1 == '--help' ]]; then
+  echo 'Usage: script.sh [OPTIONS]'
+  echo 'Options:'
+  echo '  -h, --help  Show this help message and exit'
+  exit 0
+fi
+";
+
+		var theme = new TestTheme();
+
+		var component = Render(@<BashSyntaxHighlighter Theme="@theme" Code="@source"/>);
+
+		component.MarkupMatches(@<pre style="background:#1e1e1e;color:#d4d4d4;" diff:whitespace="RemoveWhitespaceNodes">
+  <span style="color:#699856;font-weight:bold;font-style:italic;">#!/bin/bash
+  </span>
+  <span style="">
+  </span>
+  <span style="color:#699856;font-style:italic;"># This is a comment
+  </span>
+  <span style="">
+  </span>
+  <span style="color:#94dbfd;">echo</span>
+  <span style="">
+  </span>
+  <span style="color:#cc884e;">'Hello, World!'</span>
+  <span style="">
+  </span>
+  <span style="color:#94dbfd;">if</span>
+  <span style="">
+  </span>
+  <span style="">[</span>
+  <span style="">[</span>
+  <span style="">
+  </span>
+  <span style="color:#94dbfd;font-weight:bold;">$1</span>
+  <span style="">
+  </span>
+  <span style="">=</span>
+  <span style="">=</span>
+  <span style="">
+  </span>
+  <span style="color:#cc884e;">'--help'</span>
+  <span style="">
+  </span>
+  <span style="">]</span>
+  <span style="">]</span>
+  <span style="">;</span>
+  <span style="">
+  </span>
+  <span style="color:#94dbfd;">then</span>
+  <span style="">
+  </span>
+  <span style="color:#94dbfd;">echo</span>
+  <span style="">
+  </span>
+  <span style="color:#cc884e;">'Usage: script.sh [OPTIONS]'</span>
+  <span style="">
+  </span>
+  <span style="color:#94dbfd;">echo</span>
+  <span style="">
+  </span>
+  <span style="color:#cc884e;">'Options:'</span>
+  <span style="">
+  </span>
+  <span style="color:#94dbfd;">echo</span>
+  <span style="">
+  </span>
+  <span style="color:#cc884e;">'  -h, --help  Show this help message and exit'</span>
+  <span style="">
+  </span>
+  <span style="color:#94dbfd;">exit</span>
+  <span style="">
+  </span>
+  <span style="color:#b3cca4;">0</span>
+  <span style="">
+  </span>
+  <span style="color:#94dbfd;">fi</span>
+  <span style="">
+  </span>
+</pre>);
+	}
+}

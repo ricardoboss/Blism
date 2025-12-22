@@ -1,4 +1,4 @@
-@inherits BunitTestContext
+@inherits BunitContext
 
 @code {
 	[Test]
@@ -6,15 +6,16 @@
 		const string source = "-keyword1a";
 
 		var tokenizer = new SimpleTokenizer();
-		var highlighter = new SimpleHighlighter();
+		var mapper = new SimpleTokenStyleMapper();
+		var theme = new TestTheme();
 
-		var component = Render(@<SyntaxHighlighter Tokenizer="@tokenizer" Highlighter="@highlighter" Code="@source"/>);
+		var component = Render(@<SyntaxHighlighter Tokenizer="@tokenizer" StyleMapper="@mapper" Theme="@theme" Code="@source"/>);
 
-		component.MarkupMatches(@<pre style="color: red;" diff:whitespace="RemoveWhitespaceNodes">
-  <span style="color: yellow;">-</span>
-  <span style="color: purple;">keyword</span>
-  <span style="color: green;">1</span>
-  <span style="color: blue;">a</span>
+		component.MarkupMatches(@<pre style="background:#1e1e1e;color:#d4d4d4;" diff:whitespace="RemoveWhitespaceNodes">
+  <span style="color:#ff0000;">-</span>
+  <span style="color:#47a2ed;font-weight:bold;">keyword</span>
+  <span style="color:#b3cca4;">1</span>
+  <span style="color:#cc884e;">a</span>
 </pre>);
 	}
 }

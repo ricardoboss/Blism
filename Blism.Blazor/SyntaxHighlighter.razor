@@ -6,7 +6,10 @@
 	public required ITokenizer<TTokenType> Tokenizer { get; set; }
 
 	[Parameter, EditorRequired]
-	public required ITokenTypeHighlighter<TTokenType> Highlighter { get; set; }
+	public required ITokenStyleMapper<TTokenType> StyleMapper { get; set; }
+
+	[Parameter, EditorRequired]
+	public required ITheme Theme { get; set; }
 
 	[Parameter, EditorRequired]
 	public required string Code { get; set; }
@@ -14,18 +17,30 @@
 	[Parameter]
 	public string? Style { get; set; }
 
+	[Parameter]
+	public ITokenStyleRenderer? StyleRenderer { get; set; }
+
 	private List<SyntaxToken<TTokenType>>? tokens;
 
-	private readonly Dictionary<TTokenType, string> classDefinitions = new();
+	private string? containerStyle;
+	private readonly Dictionary<TTokenType, string> tokenStyles = new();
 
 	protected override void OnParametersSet()
 	{
-		classDefinitions.Clear();
+		StyleRenderer ??= TokenStyleCssRenderer.Instance;
+
+		string?[] styles = [StyleRenderer.Render(Theme.GetDefaultStyle()), Style];
+		containerStyle = string.Join(';', styles.Where(s => !string.IsNullOrWhiteSpace(s)));
+
+		tokenStyles.Clear();
 		tokens = Tokenizer.Tokenize(Code).ToList();
 
-		foreach (var token in tokens.Where(token => !classDefinitions.ContainsKey(token.Type)))
+		foreach (var token in tokens.Where(token => !tokenStyles.ContainsKey(token.Type)))
 		{
-			classDefinitions.Add(token.Type, Highlighter.GetCss(token.Type));
+			var mapped = StyleMapper.MapTokenType(token.Type);
+			var style = Theme.GetTokenStyle(mapped);
+			var rendered = StyleRenderer.Render(style);
+			tokenStyles.Add(token.Type, rendered);
 		}
 	}
 
@@ -33,10 +48,10 @@
 
 @if (tokens != null)
 {
-	<pre style="@Highlighter.GetDefaultCss(); @Style">
+	<pre style="@containerStyle">
 		@foreach (var token in tokens)
 		{
-			<span style="@classDefinitions[token.Type]">@token.Value</span>
+			<span style="@tokenStyles[token.Type]">@token.Value</span>
 		}
 	</pre>
 }

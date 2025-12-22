@@ -1,10 +1,11 @@
 ﻿<component name="ProjectRunConfigurationManager">
   <configuration default="false" name="Watch" type="RunDotNetWatch" factoryName="RunDotNetWatch" activateToolWindowBeforeRun="false">
-    <option name="exePath" value="$USER_HOME$/.nuget/packages/microsoft.aspnetcore.components.webassembly.devserver/8.0.10/tools/blazor-devserver.dll" />
+    <option name="exePath" value="$PROJECT_DIR$/../../../packages/nuget/packages/microsoft.aspnetcore.components.webassembly.devserver/9.0.8/tools/blazor-devserver.dll" />
     <option name="programParameters" value="" />
     <option name="projectFilePath" value="$PROJECT_DIR$/Blism.Example/Blism.Example.csproj" />
-    <option name="projectTfm" value="net8.0" />
+    <option name="projectTfm" value="net10.0" />
     <option name="restartOnRudeEditEditor" value="true" />
+    <option name="terminalMode" value="Auto" />
     <option name="watchParameters" value="" />
     <option name="workingDirectory" value="$PROJECT_DIR$/Blism.Example" />
     <method v="2" />
