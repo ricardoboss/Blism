@@ -1,3 +1,7 @@
+# Unreleased
+
+- Updated to .NET 10
+
 # 1.3.3
 
 - Updated to .NET 9
