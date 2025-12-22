@@ -5,6 +5,9 @@
   - `Blism.Core` is a pure .NET package, no Blazor dependency
   - `Blism.Blazor` provides Blazor infrastructure
   - `Blism.Language.*` is now `Blism.Language.*.Blazor`
+- Themes are now decoupled from Blazor and the language
+  - Theme is now a required parameter for `SyntaxHighlighter`
+  - Languages must provide a mapping from their tokens to style tokens
 
 # 1.3.3
 
