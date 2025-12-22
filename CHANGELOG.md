@@ -1,11 +1,11 @@
-# Unreleased
+# 2.0.0
 
 - Updated to .NET 10
-- Reorganized packages:
+- BREAKING: Reorganized packages:
   - `Blism.Core` is a pure .NET package, no Blazor dependency
   - `Blism.Blazor` provides Blazor infrastructure
   - `Blism.Language.*` is now `Blism.Language.*.Blazor`
-- Themes are now decoupled from Blazor and the language
+- BREAKING: Themes are now decoupled from Blazor and the language
   - Theme is now a required parameter for `SyntaxHighlighter`
   - Languages must provide a mapping from their tokens to style tokens
 
