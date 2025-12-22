@@ -1,0 +1,20 @@
+@using Blism.Core
+@using Blism.Language.Yaml.Core
+
+@code {
+
+	[Parameter]
+	public required ITokenizer<YamlTokenType> Tokenizer { get; set; } = YamlTokenizer.Instance;
+
+	[Parameter]
+	public required ITokenTypeHighlighter<YamlTokenType> Highlighter { get; set; } = YamlDarkHighlighter.Instance;
+
+	[Parameter, EditorRequired]
+	public required string Code { get; set; }
+
+	[Parameter]
+	public string? Style { get; set; }
+
+}
+
+<SyntaxHighlighter Tokenizer="@Tokenizer" Highlighter="@Highlighter" Code="@Code" Style="@Style"/>

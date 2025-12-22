@@ -1,6 +1,10 @@
 # Unreleased
 
 - Updated to .NET 10
+- Reorganized packages:
+  - `Blism.Core` is a pure .NET package, no Blazor dependency
+  - `Blism.Blazor` provides Blazor infrastructure
+  - `Blism.Language.*` is now `Blism.Language.*.Blazor`
 
 # 1.3.3
 

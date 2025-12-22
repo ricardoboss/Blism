@@ -1,0 +1,20 @@
+@using Blism.Core
+@using Blism.Language.Php.Core
+
+@code {
+
+	[Parameter]
+	public required ITokenizer<PhpTokenType> Tokenizer { get; set; } = PhpTokenizer.Instance;
+
+	[Parameter]
+	public required ITokenTypeHighlighter<PhpTokenType> Highlighter { get; set; } = PhpDarkHighlighter.Instance;
+
+	[Parameter, EditorRequired]
+	public required string Code { get; set; }
+
+	[Parameter]
+	public string? Style { get; set; }
+
+}
+
+<SyntaxHighlighter Tokenizer="@Tokenizer" Highlighter="@Highlighter" Code="@Code" Style="@Style"/>

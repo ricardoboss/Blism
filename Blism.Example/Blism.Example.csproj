@@ -6,11 +6,11 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\Languages\Blism.Language.Bash\Blism.Language.Bash.csproj"/>
-		<ProjectReference Include="..\Languages\Blism.Language.CSharp\Blism.Language.CSharp.csproj"/>
-		<ProjectReference Include="..\Languages\Blism.Language.Dart\Blism.Language.Dart.csproj"/>
-		<ProjectReference Include="..\Languages\Blism.Language.Php\Blism.Language.Php.csproj" />
-		<ProjectReference Include="..\Languages\Blism.Language.Yaml\Blism.Language.Yaml.csproj"/>
+		<ProjectReference Include="..\Languages\Bash\Blism.Language.Bash.Blazor\Blism.Language.Bash.Blazor.csproj"/>
+		<ProjectReference Include="..\Languages\CSharp\Blism.Language.CSharp.Blazor\Blism.Language.CSharp.Blazor.csproj"/>
+		<ProjectReference Include="..\Languages\Dart\Blism.Language.Dart.Blazor\Blism.Language.Dart.Blazor.csproj"/>
+		<ProjectReference Include="..\Languages\Php\Blism.Language.Php.Blazor\Blism.Language.Php.Blazor.csproj"/>
+		<ProjectReference Include="..\Languages\Yaml\Blism.Language.Yaml.Blazor\Blism.Language.Yaml.Blazor.csproj"/>
 	</ItemGroup>
 
 </Project>

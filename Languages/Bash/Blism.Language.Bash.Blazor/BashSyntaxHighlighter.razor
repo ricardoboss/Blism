@@ -1,0 +1,20 @@
+@using Blism.Core
+@using Blism.Language.Bash.Core
+
+@code {
+
+	[Parameter]
+	public required ITokenizer<BashTokenType> Tokenizer { get; set; } = BashTokenizer.Instance;
+
+	[Parameter]
+	public required ITokenTypeHighlighter<BashTokenType> Highlighter { get; set; } = BashDarkHighlighter.Instance;
+
+	[Parameter, EditorRequired]
+	public required string Code { get; set; }
+
+	[Parameter]
+	public string? Style { get; set; }
+
+}
+
+<SyntaxHighlighter Tokenizer="@Tokenizer" Highlighter="@Highlighter" Code="@Code" Style="@Style"/>

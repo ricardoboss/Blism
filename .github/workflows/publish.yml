@@ -17,31 +17,43 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
+
       - name: Setup .NET
-        uses: actions/setup-dotnet@v4
-        with:
-          dotnet-version: 9.x
+        uses: actions/setup-dotnet@v5
+
       - name: Build
         run: dotnet build -c Release
-      - name: Publish Blism Package
-        run: dotnet nuget push Blism/bin/Release/*.nupkg -k ${{ secrets.NUGET_API_KEY }} -s https://api.nuget.org/v3/index.json
+
+      - name: Publish Blism.Core Package
+        run: dotnet nuget push Blism.Core/bin/Release/*.nupkg -k ${{ secrets.NUGET_API_KEY }} -s https://api.nuget.org/v3/index.json
+
+      - name: Publish Blism.Blazor Package
+        run: dotnet nuget push Blism.Blazor/bin/Release/*.nupkg -k ${{ secrets.NUGET_API_KEY }} -s https://api.nuget.org/v3/index.json
+
       - name: Publish Language Packages
         run: |
-          for folder in "Languages"/*/; do
-            folder_name=$(basename "$folder")
-            [[ "$folder_name" =~ \.Test$ ]] && continue
+          for language in Languages/*/; do
+            language_name=$(basename "$language")
 
-            echo "::group::Publishing $folder_name"
+            for package in "$language"*/; do
+              package_name=$(basename "$package")
+              [ [ "$package_name" =~ \.Test$ ] ] && continue
 
-            {
-              dotnet nuget push Languages/$folder_name/bin/Release/*.nupkg -k ${{ secrets.NUGET_API_KEY }} -s https://api.nuget.org/v3/index.json
-            } || {
-              echo "::error::Failed to publish $folder_name"
-            }
+              echo "::group::Publishing $language_name / $package_name"
 
-            echo "::endgroup::"
+              {
+                dotnet nuget push "$package/bin/Release/"*.nupkg \
+                -k ${{ secrets.NUGET_API_KEY }} \
+                -s https://api.nuget.org/v3/index.json
+              } || {
+                echo "::error::Failed to publish $language_name / $package_name"
+              }
+
+              echo "::endgroup::"
+            done
           done
+
       - name: Publish GitHub Release
         uses: softprops/action-gh-release@v2
         with:
