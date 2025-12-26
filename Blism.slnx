@@ -1,0 +1,51 @@
+<Solution>
+  <Folder Name="/Languages/" />
+  <Folder Name="/Languages/Bash/">
+    <Project Path="Languages/Bash/Blism.Language.Bash.Blazor.Test/Blism.Language.Bash.Blazor.Test.csproj" />
+    <Project Path="Languages/Bash/Blism.Language.Bash.Blazor/Blism.Language.Bash.Blazor.csproj" />
+    <Project Path="Languages/Bash/Blism.Language.Bash.Core/Blism.Language.Bash.Core.csproj" />
+  </Folder>
+  <Folder Name="/Languages/CSharp/">
+    <Project Path="Languages/CSharp/Blism.Language.CSharp.Blazor/Blism.Language.CSharp.Blazor.csproj" />
+    <Project Path="Languages/CSharp/Blism.Language.CSharp.Core/Blism.Language.CSharp.Core.csproj" />
+  </Folder>
+  <Folder Name="/Languages/Dart/">
+    <Project Path="Languages/Dart/Blism.Language.Dart.Blazor/Blism.Language.Dart.Blazor.csproj" />
+    <Project Path="Languages/Dart/Blism.Language.Dart.Core/Blism.Language.Dart.Core.csproj" />
+  </Folder>
+  <Folder Name="/Languages/Php/">
+    <Project Path="Languages/Php/Blism.Language.Php.Blazor/Blism.Language.Php.Blazor.csproj" />
+    <Project Path="Languages/Php/Blism.Language.Php.Core/Blism.Language.Php.Core.csproj" />
+  </Folder>
+  <Folder Name="/Languages/Yaml/">
+    <Project Path="Languages/Yaml/Blism.Language.Yaml.Blazor/Blism.Language.Yaml.Blazor.csproj" />
+    <Project Path="Languages/Yaml/Blism.Language.Yaml.Core/Blism.Language.Yaml.Core.csproj" />
+  </Folder>
+  <Folder Name="/Solution Items/">
+    <File Path=".editorconfig" />
+    <File Path=".gitignore" />
+    <File Path="CHANGELOG.md" />
+    <File Path="CONTRIBUTING.md" />
+    <File Path="Directory.Build.props" />
+    <File Path="Directory.Packages.props" />
+    <File Path="global.json" />
+    <File Path="LICENSE.md" />
+    <File Path="README.md" />
+    <File Path="Test.props" />
+  </Folder>
+  <Folder Name="/Solution Items/.github/" />
+  <Folder Name="/Solution Items/.github/assets/">
+    <File Path=".github/assets/screenshot.png" />
+  </Folder>
+  <Folder Name="/Solution Items/.github/workflows/">
+    <File Path=".github/workflows/dotnet.yml" />
+    <File Path=".github/workflows/publish.yml" />
+  </Folder>
+  <Folder Name="/Themes/">
+    <Project Path="Themes/Blism.Theme.DefaultDark/Blism.Theme.DefaultDark.csproj" />
+  </Folder>
+  <Project Path="Blism.Blazor.Test/Blism.Blazor.Test.csproj" />
+  <Project Path="Blism.Blazor/Blism.Blazor.csproj" />
+  <Project Path="Blism.Core/Blism.Core.csproj" />
+  <Project Path="Blism.Example/Blism.Example.csproj" />
+</Solution>
