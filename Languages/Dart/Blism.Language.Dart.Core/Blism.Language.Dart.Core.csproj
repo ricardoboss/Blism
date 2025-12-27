@@ -11,8 +11,9 @@
 		</PackageReference>
 	</ItemGroup>
 
-	<PropertyGroup Condition="'$(Configuration)' == 'Release'">
-		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+	<PropertyGroup>
+		<IsPackable>true</IsPackable>
+		<Description>Adds Blism language support for Dart</Description>
 	</PropertyGroup>
 
 </Project>

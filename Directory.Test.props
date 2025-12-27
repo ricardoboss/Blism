@@ -1,10 +1,5 @@
 <Project>
 
-	<PropertyGroup>
-		<IsPackable>false</IsPackable>
-		<IsTestProject>true</IsTestProject>
-	</PropertyGroup>
-
 	<ItemGroup>
 		<AssemblyAttribute Include="System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute" />
 	</ItemGroup>

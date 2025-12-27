@@ -1,0 +1,27 @@
+<Project>
+
+	<Target
+		Name="ValidateRequiredPropertiesAreSet"
+		BeforeTargets="PrepareForBuild"
+		Condition="'$(IsPackable)' == 'true' And '$(DesignTimeBuild)' != 'true'"
+	>
+		<Warning Text="Package Description is not set" Condition="'$(Description)' == ''"/>
+
+		<Warning Text="Package has no CHANGELOG.md (looked at '$(ChangelogFilePath)')" Condition="!Exists('$(ChangelogFilePath)')"/>
+
+		<Error Text="Package has no README.md (looked at '$(ReadmeFilePath)')" Condition="!Exists('$(ReadmeFilePath)')"/>
+
+		<Error Text="Package Version is not set" Condition="'$(Version)' == ''"/>
+		<Message Text="Publishing package version '$(Version)'" Condition="'$(Version)' != ''" Importance="high"/>
+	</Target>
+
+	<Target Name="PreparePackageReleaseNotesFromFile" BeforeTargets="GenerateNuspec">
+		<ReadLinesFromFile File="$(ChangelogFilePath)">
+			<Output TaskParameter="Lines" ItemName="ReleaseNoteLines"/>
+		</ReadLinesFromFile>
+		<PropertyGroup>
+			<PackageReleaseNotes>@(ReleaseNoteLines, '%0a')</PackageReleaseNotes>
+		</PropertyGroup>
+	</Target>
+
+</Project>

@@ -7,8 +7,14 @@
 		</PackageReference>
 	</ItemGroup>
 
-	<PropertyGroup Condition="'$(Configuration)' == 'Release'">
-		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+	<ItemGroup>
+	  <None Remove="publish\Blism.Core.2.0.0.snupkg" />
+	</ItemGroup>
+
+	<PropertyGroup>
+		<IsPackable>true</IsPackable>
+		<Description>Adds the Blism core infrastructure</Description>
+		<ReadmeFilePath>$(MSBuildThisFileDirectory)..\README.md</ReadmeFilePath>
 	</PropertyGroup>
 
 </Project>

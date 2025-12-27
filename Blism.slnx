@@ -1,4 +1,4 @@
-<Solution>
+﻿<Solution>
   <Folder Name="/Languages/" />
   <Folder Name="/Languages/Bash/">
     <Project Path="Languages/Bash/Blism.Language.Bash.Blazor.Test/Blism.Language.Bash.Blazor.Test.csproj" />
@@ -27,11 +27,13 @@
     <File Path="CHANGELOG.md" />
     <File Path="CONTRIBUTING.md" />
     <File Path="Directory.Build.props" />
+    <File Path="Directory.Nuget.props" />
+    <File Path="Directory.Nuget.targets" />
     <File Path="Directory.Packages.props" />
+    <File Path="Directory.Test.props" />
     <File Path="global.json" />
     <File Path="LICENSE.md" />
     <File Path="README.md" />
-    <File Path="Test.props" />
   </Folder>
   <Folder Name="/Solution Items/.github/" />
   <Folder Name="/Solution Items/.github/assets/">

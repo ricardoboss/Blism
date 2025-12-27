@@ -5,43 +5,19 @@
 		<LangVersion>latest</LangVersion>
 		<Nullable>enable</Nullable>
 		<ImplicitUsings>enable</ImplicitUsings>
+
+		<!-- projects need to explicitly set this to true to generate a package -->
+		<IsPackable>false</IsPackable>
 	</PropertyGroup>
-
-	<PropertyGroup>
-		<Version>2.0.0</Version>
-		<Description>A simple syntax highlighter library for Blazor.</Description>
-		<PackageTags>syntax;highlighter;blazor;csharp;dart;yaml</PackageTags>
-
-		<Authors>Riardo Boss</Authors>
-		<Copyright>Copyright © 2025 Ricardo Boss</Copyright>
-		<PackageLicenseExpression>MIT</PackageLicenseExpression>
-		<PackageReadmeFile>README.md</PackageReadmeFile>
-		<PackageProjectUrl>https://github.com/ricardoboss/Blism</PackageProjectUrl>
-
-		<RepositoryUrl>https://github.com/ricardoboss/Blism.git</RepositoryUrl>
-		<RepositoryType>git</RepositoryType>
-		<!-- needed for Source Link -->
-		<PublishRepositoryUrl>true</PublishRepositoryUrl>
-
-		<IncludeSymbols>true</IncludeSymbols>
-		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
-	</PropertyGroup>
-
-	<Target Name="PreparePackageReleaseNotesFromFile" BeforeTargets="GenerateNuspec">
-		<ReadLinesFromFile File="$(MSBuildThisFileDirectory)CHANGELOG.md">
-			<Output TaskParameter="Lines" ItemName="ReleaseNoteLines"/>
-		</ReadLinesFromFile>
-		<PropertyGroup>
-			<PackageReleaseNotes>@(ReleaseNoteLines, '%0a')</PackageReleaseNotes>
-		</PropertyGroup>
-	</Target>
-
-	<ItemGroup Condition="'$(IsPackable)' == 'true' And '$(Configuration)' == 'Release'">
-		<None Include="$(MSBuildThisFileDirectory)LICENSE.md" Pack="true" PackagePath="\"/>
-		<None Include="$(MSBuildThisFileDirectory)README.md" Pack="true" PackagePath="\"/>
-	</ItemGroup>
 
 	<!-- For test projects, import additional props -->
-	<Import Project="Test.props" Condition="$(MSBuildProjectFile.EndsWith('.Test.csproj'))"/>
+	<PropertyGroup Condition="$(MSBuildProjectFile.EndsWith('.Test.csproj'))">
+		<IsTestProject>true</IsTestProject>
+	</PropertyGroup>
+	<Import Project="Directory.Test.props" Condition="'$(IsTestProject)' == 'true'"/>
+
+	<!-- For packable projects, import additional props -->
+	<Import Project="Directory.Nuget.props" Condition="'$(IsTestProject)' != 'true' And '$(Configuration)' == 'Release'"/>
+	<Import Project="Directory.Nuget.targets" Condition="'$(IsTestProject)' != 'true' And '$(Configuration)' == 'Release'"/>
 
 </Project>

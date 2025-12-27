@@ -12,8 +12,9 @@
 		</PackageReference>
 	</ItemGroup>
 
-	<PropertyGroup Condition="'$(Configuration)' == 'Release'">
-		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+	<PropertyGroup>
+		<IsPackable>true</IsPackable>
+		<Description>Adds the Blism Blazor component for Bash</Description>
 	</PropertyGroup>
 
 </Project>
