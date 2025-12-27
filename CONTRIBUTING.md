@@ -37,7 +37,7 @@ SUBJECT=World
 For our example language, the project name would be `Blism.Language.FooLang`.
 The project would be created at `[repository root]/Languages/Foo/Blism.Language.FooLang.Core/Blism.Language.FooLang.Core.csproj`.
 
-Adhering to this pattern allows adding extension for this language later on (like a test project).
+Adhering to this pattern allows adding extensions for this language later on (like a test project).
 
 > [!NOTE]
 > This naming pattern is required for automatic inclusion in the bundle packages.
