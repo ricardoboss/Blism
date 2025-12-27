@@ -66,6 +66,9 @@ jobs:
           # Themes/<Project>
           publish_folder "Themes/" ""
 
+          # Bundles/<Project>
+          publish_folder "Bundles/" ""
+
       - name: Publish GitHub Release
         uses: softprops/action-gh-release@v2
         with:
