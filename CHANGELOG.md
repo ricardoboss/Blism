@@ -1,3 +1,7 @@
+# Unreleased
+
+- Added `Blism.Bundle.Languages.Blazor` and `Blism.Bundle.Languages` packages
+
 # 2.0.0
 
 - Updated to .NET 10
