@@ -1,4 +1,8 @@
-﻿<Solution>
+<Solution>
+  <Folder Name="/Bundles/">
+    <Project Path="Bundles/Blism.Bundle.Languages.Blazor/Blism.Bundle.Languages.Blazor.csproj" />
+    <Project Path="Bundles/Blism.Bundle.Languages/Blism.Bundle.Languages.csproj" />
+  </Folder>
   <Folder Name="/Languages/" />
   <Folder Name="/Languages/Bash/">
     <Project Path="Languages/Bash/Blism.Language.Bash.Blazor.Test/Blism.Language.Bash.Blazor.Test.csproj" />

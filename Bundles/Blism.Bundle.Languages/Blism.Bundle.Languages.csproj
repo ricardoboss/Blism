@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<ItemGroup>
+		<LanguageCoreProjects Include="..\..\Languages\**\*.Core.csproj"/>
+		<ProjectReference Include="@(LanguageCoreProjects->'%(identity)')"/>
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.SourceLink.GitHub">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+	</ItemGroup>
+
+	<PropertyGroup>
+		<IsPackable>true</IsPackable>
+		<Description>Bundles all available Blism languages</Description>
+	</PropertyGroup>
+
+</Project>
