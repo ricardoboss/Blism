@@ -87,7 +87,7 @@ For our simple language, we only need three expressions:
 
 These are not the best regular expressions (there are many edge cases), but they'll do the job.
 
-The other thing it wants use to implement is a getter for the "unknown" token type.
+The other thing it wants us to implement is a getter for the "unknown" token type.
 This type is used when none of the regexes matched the input.
 
 Your tokenizer should also expose a static, readonly singleton instance (used in the Blazor component).
