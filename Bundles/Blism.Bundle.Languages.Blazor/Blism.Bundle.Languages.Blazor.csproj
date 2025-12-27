@@ -1,7 +1,7 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
 
 	<ItemGroup>
-		<LanguageCoreProjects Include="..\..\Languages\**\*.Core.csproj"/>
+		<LanguageCoreProjects Include="..\..\Languages\**\*.Blazor.csproj"/>
 		<ProjectReference Include="@(LanguageCoreProjects->'%(identity)')"/>
 	</ItemGroup>
 
@@ -10,14 +10,6 @@
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
-	</ItemGroup>
-
-	<ItemGroup>
-	  <None Remove="publish\Blism.Bundle.Languages.Blazor.2.0.0.snupkg" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <Folder Include="publish\" />
 	</ItemGroup>
 
 	<PropertyGroup>
