@@ -53,5 +53,5 @@
   <Project Path="Blism.Blazor.Test/Blism.Blazor.Test.csproj" />
   <Project Path="Blism.Blazor/Blism.Blazor.csproj" />
   <Project Path="Blism.Core/Blism.Core.csproj" />
-  <Project Path="Blism.Example/Blism.Example.csproj" />
+  <Project Path="Blism.Example.Blazor/Blism.Example.Blazor.csproj" />
 </Solution>
