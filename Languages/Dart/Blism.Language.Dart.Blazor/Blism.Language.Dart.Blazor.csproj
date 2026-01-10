@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
 
 	<ItemGroup>
-		<ProjectReference Include="..\..\..\Blism.Blazor\Blism.Blazor.csproj"/>
+		<ProjectReference Include="..\..\..\Engines\Blism.Blazor\Blism.Blazor.csproj"/>
 		<ProjectReference Include="..\Blism.Language.Dart.Core\Blism.Language.Dart.Core.csproj" />
 	</ItemGroup>
 

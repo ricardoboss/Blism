@@ -3,6 +3,13 @@
     <Project Path="Bundles/Blism.Bundle.Languages.Blazor/Blism.Bundle.Languages.Blazor.csproj" />
     <Project Path="Bundles/Blism.Bundle.Languages/Blism.Bundle.Languages.csproj" />
   </Folder>
+  <Folder Name="/Engines/">
+    <Project Path="Engines/Blism.Blazor.Test/Blism.Blazor.Test.csproj" />
+    <Project Path="Engines/Blism.Blazor/Blism.Blazor.csproj" />
+  </Folder>
+  <Folder Name="/Examples/">
+    <Project Path="Examples/Blism.Example.Blazor/Blism.Example.Blazor.csproj" />
+  </Folder>
   <Folder Name="/Languages/" />
   <Folder Name="/Languages/Bash/">
     <Project Path="Languages/Bash/Blism.Language.Bash.Blazor.Test/Blism.Language.Bash.Blazor.Test.csproj" />
@@ -50,8 +57,5 @@
   <Folder Name="/Themes/">
     <Project Path="Themes/Blism.Theme.DefaultDark/Blism.Theme.DefaultDark.csproj" />
   </Folder>
-  <Project Path="Blism.Blazor.Test/Blism.Blazor.Test.csproj" />
-  <Project Path="Blism.Blazor/Blism.Blazor.csproj" />
   <Project Path="Blism.Core/Blism.Core.csproj" />
-  <Project Path="Blism.Example.Blazor/Blism.Example.Blazor.csproj" />
 </Solution>

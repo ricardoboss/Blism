@@ -13,7 +13,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\Blism.Core\Blism.Core.csproj" />
+	  <ProjectReference Include="..\..\Blism.Core\Blism.Core.csproj" />
 	</ItemGroup>
 
 	<PropertyGroup>
