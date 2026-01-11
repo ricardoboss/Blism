@@ -12,7 +12,7 @@
 		<Error Text="Package has no README.md (looked at '$(ReadmeFilePath)')" Condition="!Exists('$(ReadmeFilePath)')"/>
 
 		<Error Text="Package Version is not set" Condition="'$(Version)' == ''"/>
-		<Message Text="Publishing package version '$(Version)'" Condition="'$(Version)' != ''" Importance="high"/>
+		<Message Text="Publishing package '$(PackageId)' version '$(Version)'" Condition="'$(Version)' != ''" Importance="high"/>
 	</Target>
 
 	<Target Name="PreparePackageReleaseNotesFromFile" BeforeTargets="GenerateNuspec">
