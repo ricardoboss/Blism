@@ -1,14 +1,4 @@
-﻿using System.Text;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using Blism.Wpf;
+﻿using System.Windows;
 
 namespace Blism.Example.Wpf;
 
@@ -32,7 +22,7 @@ class Program
 }
 ";
 
-	private const string YamlSource = @"# This is a comment
+	public const string YamlSource = @"# This is a comment
 name: Blism
 version: 1.0.0
 quotes: 'This is a string'
@@ -51,14 +41,14 @@ dictionary:
       key3: value3
 ";
 
-	private const string DartSource = @"import 'dart:async';
+	public const string DartSource = @"import 'dart:async';
 
 void main() async {
   // This is a comment
   print('Hello, World!');
 }";
 
-	private const string BashSource = @"#!/bin/bash
+	public const string BashSource = @"#!/bin/bash
 
 # This is a comment
 echo 'Hello, World!'
@@ -71,7 +61,7 @@ if [[ $1 == '--help' ]]; then
 fi
 ";
 
-	private const string PhpSource = @"<?php
+	public const string PhpSource = @"<?php
 declare(strict_types=1);
 
 namespace App\Commands;
