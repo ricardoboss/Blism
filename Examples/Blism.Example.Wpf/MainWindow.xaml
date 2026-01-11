@@ -6,11 +6,25 @@
         xmlns:csharpWpf="clr-namespace:Blism.Language.CSharp.Wpf;assembly=Blism.Language.CSharp.Wpf"
         xmlns:themeDefaultDark="clr-namespace:Blism.Theme.DefaultDark;assembly=Blism.Theme.DefaultDark"
         xmlns:example="clr-namespace:Blism.Example.Wpf"
+        xmlns:bashWpf="clr-namespace:Blism.Language.Bash.Wpf;assembly=Blism.Language.Bash.Wpf"
         mc:Ignorable="d"
         Title="Blism.Example.Wpf" Height="900" Width="900">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
         <csharpWpf:CSharpSyntaxHighlighter
+            Grid.Row="0"
+            Grid.Column="0"
             Code="{x:Static example:MainWindow.CSharpSource}"
+            Theme="{x:Static themeDefaultDark:DefaultDarkTheme.Instance }" />
+
+        <bashWpf:BashSyntaxHighlighter
+            Grid.Row="0"
+            Grid.Column="1"
+            Code="{x:Static example:MainWindow.BashSource}"
             Theme="{x:Static themeDefaultDark:DefaultDarkTheme.Instance }" />
     </Grid>
 </Window>
