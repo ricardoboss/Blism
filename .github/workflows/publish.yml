@@ -28,9 +28,6 @@ jobs:
       - name: Publish Blism.Core Package
         run: dotnet nuget push Blism.Core/bin/Release/*.nupkg -k ${{ secrets.NUGET_API_KEY }} -s https://api.nuget.org/v3/index.json
 
-      - name: Publish Blism.Blazor Package
-        run: dotnet nuget push Blism.Blazor/bin/Release/*.nupkg -k ${{ secrets.NUGET_API_KEY }} -s https://api.nuget.org/v3/index.json
-
       - name: Publish Other Packages
         shell: bash
         run: |
@@ -56,6 +53,9 @@ jobs:
               echo "::endgroup::"
             done
           }
+
+          # Engines/<Project>
+          publish_folder "Engines/" ""
 
           # Languages/<Language>/<Package>
           for language in Languages/*/; do
