@@ -19,7 +19,7 @@
 	<PropertyGroup>
 		<IsPackable>true</IsPackable>
 		<Description>Adds the Blism syntax highlighter component for Blazor</Description>
-		<ReadmeFilePath>$(MSBuildThisFileDirectory)..\README.md</ReadmeFilePath>
+		<ReadmeFilePath>$(MSBuildThisFileDirectory)..\..\README.md</ReadmeFilePath>
 	</PropertyGroup>
 
 </Project>
