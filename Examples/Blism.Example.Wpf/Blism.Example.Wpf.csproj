@@ -6,4 +6,10 @@
 		<UseWPF>true</UseWPF>
 	</PropertyGroup>
 
+	<ItemGroup>
+	  <ProjectReference Include="..\..\Engines\Blism.Wpf\Blism.Wpf.csproj" />
+	  <ProjectReference Include="..\..\Languages\CSharp\Blism.Language.CSharp.Wpf\Blism.Language.CSharp.Wpf.csproj" />
+	  <ProjectReference Include="..\..\Themes\Blism.Theme.DefaultDark\Blism.Theme.DefaultDark.csproj" />
+	</ItemGroup>
+
 </Project>

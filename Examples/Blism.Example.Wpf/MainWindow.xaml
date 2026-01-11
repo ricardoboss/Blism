@@ -3,10 +3,14 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Blism.Example.Wpf"
+        xmlns:csharpWpf="clr-namespace:Blism.Language.CSharp.Wpf;assembly=Blism.Language.CSharp.Wpf"
+        xmlns:themeDefaultDark="clr-namespace:Blism.Theme.DefaultDark;assembly=Blism.Theme.DefaultDark"
+        xmlns:example="clr-namespace:Blism.Example.Wpf"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Blism.Example.Wpf" Height="900" Width="900">
     <Grid>
-
+        <csharpWpf:CSharpSyntaxHighlighter
+            Code="{x:Static example:MainWindow.CSharpSource}"
+            Theme="{x:Static themeDefaultDark:DefaultDarkTheme.Instance }" />
     </Grid>
 </Window>
