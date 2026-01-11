@@ -1,6 +1,7 @@
 <Solution>
   <Folder Name="/Bundles/">
     <Project Path="Bundles/Blism.Bundle.Languages.Blazor/Blism.Bundle.Languages.Blazor.csproj" />
+    <Project Path="Bundles/Blism.Bundle.Languages.Wpf/Blism.Bundle.Languages.Wpf.csproj" />
     <Project Path="Bundles/Blism.Bundle.Languages/Blism.Bundle.Languages.csproj" />
   </Folder>
   <Folder Name="/Engines/">
