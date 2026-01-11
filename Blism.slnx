@@ -9,6 +9,7 @@
   </Folder>
   <Folder Name="/Examples/">
     <Project Path="Examples/Blism.Example.Blazor/Blism.Example.Blazor.csproj" />
+    <Project Path="Examples/Blism.Example.Wpf/Blism.Example.Wpf.csproj" />
   </Folder>
   <Folder Name="/Languages/" />
   <Folder Name="/Languages/Bash/">
