@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<TargetFramework>net10.0-windows</TargetFramework>
+		<UseWPF>true</UseWPF>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\..\Engines\Blism.Wpf\Blism.Wpf.csproj" />
+	  <ProjectReference Include="..\..\Languages\Bash\Blism.Language.Bash.Wpf\Blism.Language.Bash.Wpf.csproj" />
+	  <ProjectReference Include="..\..\Languages\CSharp\Blism.Language.CSharp.Wpf\Blism.Language.CSharp.Wpf.csproj" />
+	  <ProjectReference Include="..\..\Themes\Blism.Theme.DefaultDark\Blism.Theme.DefaultDark.csproj" />
+	</ItemGroup>
+
+</Project>

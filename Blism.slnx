@@ -1,24 +1,29 @@
 <Solution>
   <Folder Name="/Bundles/">
     <Project Path="Bundles/Blism.Bundle.Languages.Blazor/Blism.Bundle.Languages.Blazor.csproj" />
+    <Project Path="Bundles/Blism.Bundle.Languages.Wpf/Blism.Bundle.Languages.Wpf.csproj" />
     <Project Path="Bundles/Blism.Bundle.Languages/Blism.Bundle.Languages.csproj" />
   </Folder>
   <Folder Name="/Engines/">
     <Project Path="Engines/Blism.Blazor.Test/Blism.Blazor.Test.csproj" />
     <Project Path="Engines/Blism.Blazor/Blism.Blazor.csproj" />
+    <Project Path="Engines/Blism.Wpf/Blism.Wpf.csproj" />
   </Folder>
   <Folder Name="/Examples/">
     <Project Path="Examples/Blism.Example.Blazor/Blism.Example.Blazor.csproj" />
+    <Project Path="Examples/Blism.Example.Wpf/Blism.Example.Wpf.csproj" />
   </Folder>
   <Folder Name="/Languages/" />
   <Folder Name="/Languages/Bash/">
     <Project Path="Languages/Bash/Blism.Language.Bash.Blazor.Test/Blism.Language.Bash.Blazor.Test.csproj" />
     <Project Path="Languages/Bash/Blism.Language.Bash.Blazor/Blism.Language.Bash.Blazor.csproj" />
     <Project Path="Languages/Bash/Blism.Language.Bash.Core/Blism.Language.Bash.Core.csproj" />
+    <Project Path="Languages/Bash/Blism.Language.Bash.Wpf/Blism.Language.Bash.Wpf.csproj" />
   </Folder>
   <Folder Name="/Languages/CSharp/">
     <Project Path="Languages/CSharp/Blism.Language.CSharp.Blazor/Blism.Language.CSharp.Blazor.csproj" />
     <Project Path="Languages/CSharp/Blism.Language.CSharp.Core/Blism.Language.CSharp.Core.csproj" />
+    <Project Path="Languages/CSharp/Blism.Language.CSharp.Wpf/Blism.Language.CSharp.Wpf.csproj" />
   </Folder>
   <Folder Name="/Languages/Dart/">
     <Project Path="Languages/Dart/Blism.Language.Dart.Blazor/Blism.Language.Dart.Blazor.csproj" />

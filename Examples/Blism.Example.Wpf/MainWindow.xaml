@@ -1,0 +1,30 @@
+﻿<Window x:Class="Blism.Example.Wpf.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:csharpWpf="clr-namespace:Blism.Language.CSharp.Wpf;assembly=Blism.Language.CSharp.Wpf"
+        xmlns:themeDefaultDark="clr-namespace:Blism.Theme.DefaultDark;assembly=Blism.Theme.DefaultDark"
+        xmlns:example="clr-namespace:Blism.Example.Wpf"
+        xmlns:bashWpf="clr-namespace:Blism.Language.Bash.Wpf;assembly=Blism.Language.Bash.Wpf"
+        mc:Ignorable="d"
+        Title="Blism.Example.Wpf" Height="900" Width="900">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <csharpWpf:CSharpSyntaxHighlighter
+            Grid.Row="0"
+            Grid.Column="0"
+            Code="{x:Static example:MainWindow.CSharpSource}"
+            Theme="{x:Static themeDefaultDark:DefaultDarkTheme.Instance }" />
+
+        <bashWpf:BashSyntaxHighlighter
+            Grid.Row="0"
+            Grid.Column="1"
+            Code="{x:Static example:MainWindow.BashSource}"
+            Theme="{x:Static themeDefaultDark:DefaultDarkTheme.Instance }" />
+    </Grid>
+</Window>
