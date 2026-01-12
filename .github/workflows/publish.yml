@@ -73,7 +73,7 @@ jobs:
 
     runs-on: ubuntu-latest
 
-    environment: nuget.org
+    environment: ${{ startsWith(github.ref, 'refs/tags/v') && 'nuget.org' || 'dry-run' }}
 
     permissions:
       contents: write
