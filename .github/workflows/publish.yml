@@ -1,74 +1,116 @@
-name: NuGet Publish
+name: Publish
 
 on:
   push:
     tags:
       - 'v[0-9]+.[0-9]+.[0-9]+*'
+  pull_request:
+    paths:
+      - .github/workflows/publish.yml
 
 jobs:
+  discover:
+    name: Discover Packages
+
+    runs-on: ubuntu-latest
+
+    outputs:
+      matrix: ${{ steps.discovery.outputs.matrix }}
+
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Discover Packages
+        id: discovery
+        shell: bash
+        run: |
+          set -euo pipefail
+          shopt -s nullglob
+
+          entries=()
+
+          add_package() {
+            local dir="$1"
+
+            name=$(basename "$dir")
+            [[ "$name" =~ \.Test$ ]] && return
+
+            entries+=("{
+              \"path\": \"${dir}\"
+            }")
+          }
+
+          # Engines/<Package>
+          for dir in Engines/*/; do
+            add_package "$dir"
+          done
+
+          # Themes/<Package>
+          for dir in Themes/*/; do
+            add_package "$dir"
+          done
+
+          # Bundles/<Package>
+          for dir in Bundles/*/; do
+            add_package "$dir"
+          done
+
+          # Languages/<Language>/<Package>
+          for language in Languages/*/; do
+            for dir in "$language"*/; do
+              add_package "$dir"
+            done
+          done
+
+          json="{\"include\":[$(IFS=,; echo "${entries[*]}")]}"
+
+          echo "matrix=$json" >> "$GITHUB_OUTPUT"
+
   publish:
-    name: Publish NuGet Package
+    name: Publish NuGet Packages
+
+    needs: discover
+
+    runs-on: ubuntu-latest
 
     environment: nuget.org
 
     permissions:
       contents: write
 
-    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix: ${{ fromJson(needs.discover.outputs.matrix) }}
 
     steps:
       - uses: actions/checkout@v6
-
-      - name: Setup .NET
-        uses: actions/setup-dotnet@v5
+      - uses: actions/setup-dotnet@v5
 
       - name: Build
         run: dotnet build -c Release
 
-      - name: Publish Blism.Core Package
-        run: dotnet nuget push Blism.Core/bin/Release/*.nupkg -k ${{ secrets.NUGET_API_KEY }} -s https://api.nuget.org/v3/index.json
-
-      - name: Publish Other Packages
+      - name: Publish
         shell: bash
+        if: startsWith(github.ref, 'refs/tags/v')
         run: |
-          set -euo pipefail
           shopt -s nullglob
+          dotnet nuget push "${{ matrix.path }}/bin/Release/"*.nupkg \
+            -k "${{ secrets.NUGET_API_KEY }}" \
+            -s https://api.nuget.org/v3/index.json
 
-          publish_folder() {
-            local base="$1"
-            local label="$2"
+  release:
+    name: Publish GitHub Release
 
-            for dir in "$base"*/; do
-              name=$(basename "$dir")
-              [[ "$name" =~ \.Test$ ]] && continue
+    needs: publish
 
-              echo "::group::Publishing ${label}${name}"
+    if: startsWith(github.ref, 'refs/tags/v')
 
-              if ! dotnet nuget push "$dir/bin/Release/"*.nupkg \
-                -k "${{ secrets.NUGET_API_KEY }}" \
-                -s https://api.nuget.org/v3/index.json; then
-                echo "::error::Failed to publish ${label}${name}"
-              fi
+    runs-on: ubuntu-latest
 
-              echo "::endgroup::"
-            done
-          }
+    permissions:
+      contents: write
 
-          # Engines/<Project>
-          publish_folder "Engines/" ""
-
-          # Languages/<Language>/<Package>
-          for language in Languages/*/; do
-            language_name=$(basename "$language")
-            publish_folder "$language" "$language_name / "
-          done
-
-          # Themes/<Project>
-          publish_folder "Themes/" ""
-
-          # Bundles/<Project>
-          publish_folder "Bundles/" ""
-
+    steps:
       - name: Publish GitHub Release
         uses: softprops/action-gh-release@v2
         with:
