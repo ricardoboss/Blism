@@ -1,4 +1,12 @@
 <Solution>
+  <Folder Name="/.github/" />
+  <Folder Name="/.github/assets/">
+    <File Path=".github/assets/screenshot.png" />
+  </Folder>
+  <Folder Name="/.github/workflows/">
+    <File Path=".github/workflows/dotnet.yml" />
+    <File Path=".github/workflows/publish.yml" />
+  </Folder>
   <Folder Name="/Bundles/">
     <Project Path="Bundles/Blism.Bundle.Languages.Blazor/Blism.Bundle.Languages.Blazor.csproj" />
     <Project Path="Bundles/Blism.Bundle.Languages/Blism.Bundle.Languages.csproj" />
@@ -45,14 +53,6 @@
     <File Path="global.json" />
     <File Path="LICENSE.md" />
     <File Path="README.md" />
-  </Folder>
-  <Folder Name="/Solution Items/.github/" />
-  <Folder Name="/Solution Items/.github/assets/">
-    <File Path=".github/assets/screenshot.png" />
-  </Folder>
-  <Folder Name="/Solution Items/.github/workflows/">
-    <File Path=".github/workflows/dotnet.yml" />
-    <File Path=".github/workflows/publish.yml" />
   </Folder>
   <Folder Name="/Themes/">
     <Project Path="Themes/Blism.Theme.DefaultDark/Blism.Theme.DefaultDark.csproj" />
