@@ -35,9 +35,7 @@ jobs:
             name=$(basename "$dir")
             [[ "$name" =~ \.Test$ ]] && return
 
-            entries+=("{
-              \"path\": \"${dir}\"
-            }")
+            entries+=("{ \"path\": \"${dir}\" }")
           }
 
           # Engines/<Package>
