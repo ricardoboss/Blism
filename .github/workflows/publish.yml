@@ -90,7 +90,7 @@ jobs:
           echo "matrix=$json" >> "$GITHUB_OUTPUT"
 
   pack:
-    name: Build & Pack
+    name: Build & Pack ${{ matrix.name }}
 
     needs: discover
 
