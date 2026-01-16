@@ -30,7 +30,7 @@ jobs:
           entries=()
 
           add_package() {
-            local dir="$1"
+            local dir="${1%/}" # remove trailing slash
 
             name=$(basename "$dir")
             [[ "$name" =~ \.Test$ ]] && {
