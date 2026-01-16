@@ -20,7 +20,7 @@ jobs:
     steps:
       - uses: actions/checkout@v6
 
-      - name: Discover Packages
+      - name: Discover Projects
         id: discovery
         shell: bash
         run: |
@@ -87,17 +87,12 @@ jobs:
 
           echo "matrix=$json" >> "$GITHUB_OUTPUT"
 
-  publish:
-    name: Publish NuGet Packages
+  pack:
+    name: Build & Pack
 
     needs: discover
 
     runs-on: ubuntu-latest
-
-    environment: ${{ startsWith(github.ref, 'refs/tags/v') && 'nuget.org' || 'dry-run' }}
-
-    permissions:
-      contents: write
 
     strategy:
       fail-fast: false
@@ -113,28 +108,41 @@ jobs:
       - name: Pack
         run: dotnet pack ${{ matrix.project }} -c Release --no-build
 
-      - name: Publish
-        if: startsWith(github.ref, 'refs/tags/v')
-        shell: bash
-        run: |
-          shopt -s nullglob
-          dotnet nuget push publish/*.nupkg \
-            -k "${{ secrets.NUGET_API_KEY }}" \
-            -s https://api.nuget.org/v3/index.json
+      - name: Upload packages
+        uses: actions/upload-artifact@v4
+        with:
+          name: packages
+          path: artifacts/packages/*.nupkg
 
-  release:
-    name: Publish GitHub Release
-
-    needs: publish
+  publish:
+    name: Publish
 
     if: startsWith(github.ref, 'refs/tags/v')
 
+    needs: pack
+
     runs-on: ubuntu-latest
+
+    environment: nuget.org
 
     permissions:
       contents: write
 
     steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: packages
+          path: publish
+
+      - name: Publish NuGet Packages
+        shell: bash
+        run: |
+          shopt -s nullglob
+          dotnet nuget push publish/*.nupkg \
+            -k "${{ secrets.NUGET_API_KEY }}" \
+            -s https://api.nuget.org/v3/index.json \
+            --skip-duplicate
+
       - name: Publish GitHub Release
         uses: softprops/action-gh-release@v2
         with:
