@@ -36,14 +36,17 @@
   <Folder Name="/Languages/Dart/">
     <Project Path="Languages/Dart/Blism.Language.Dart.Blazor/Blism.Language.Dart.Blazor.csproj" />
     <Project Path="Languages/Dart/Blism.Language.Dart.Core/Blism.Language.Dart.Core.csproj" />
+    <Project Path="Languages/Dart/Blism.Language.Dart.Wpf/Blism.Language.Dart.Wpf.csproj" />
   </Folder>
   <Folder Name="/Languages/Php/">
     <Project Path="Languages/Php/Blism.Language.Php.Blazor/Blism.Language.Php.Blazor.csproj" />
     <Project Path="Languages/Php/Blism.Language.Php.Core/Blism.Language.Php.Core.csproj" />
+    <Project Path="Languages/Php/Blism.Language.Php.Wpf/Blism.Language.Php.Wpf.csproj" />
   </Folder>
   <Folder Name="/Languages/Yaml/">
     <Project Path="Languages/Yaml/Blism.Language.Yaml.Blazor/Blism.Language.Yaml.Blazor.csproj" />
     <Project Path="Languages/Yaml/Blism.Language.Yaml.Core/Blism.Language.Yaml.Core.csproj" />
+    <Project Path="Languages/Yaml/Blism.Language.Yaml.Wpf/Blism.Language.Yaml.Wpf.csproj" />
   </Folder>
   <Folder Name="/Solution Items/">
     <File Path=".editorconfig" />
