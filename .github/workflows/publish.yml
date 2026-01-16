@@ -112,7 +112,8 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: packages
-          path: publis/*.nupkg
+          path: publish/*.nupkg
+          if-no-files-found: 'error'
 
   publish:
     name: Publish
