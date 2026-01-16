@@ -8,7 +8,7 @@
 	public required ITokenizer<YamlTokenType> Tokenizer { get; set; } = YamlTokenizer.Instance;
 
 	[Parameter]
-	public required ITokenStyleMapper<YamlTokenType> StyleMapper { get; set; } = YamlStyleMapper.Instance;
+	public required ITokenStyleMapper<YamlTokenType> StyleMapper { get; set; } = YamlTokenStyleMapper.Instance;
 
 	[Parameter, EditorRequired]
 	public required ITheme Theme { get; set; }
