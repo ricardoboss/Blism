@@ -57,8 +57,14 @@ jobs:
               return
             fi
 
+            if [[ "$dir" == *"Wpf"* ]]; then
+              os="windows-latest"
+            else
+              os="ubuntu-latest"
+            fi
+
             project_name="$(basename "$project" .csproj)"
-            entries+=("{\"project\":\"${project}\",\"name\":\"${project_name}\"}")
+            entries+=("{\"project\":\"${project}\",\"name\":\"${project_name}\",\"os\":\"${os}\"}")
 
             echo "discovered: project=${project}"
           }
@@ -94,7 +100,7 @@ jobs:
 
     needs: discover
 
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
 
     strategy:
       fail-fast: false
