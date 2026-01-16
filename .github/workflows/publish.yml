@@ -57,7 +57,9 @@ jobs:
               return
             fi
 
-            entries+=("{\"project\":\"${project}\"}")
+            id="$(echo -n "$project" | sha1sum | cut -c1-12)"
+
+            entries+=("{\"project\":\"${project}\",\"id\":\"${id}\"}")
             echo "discovered: project=${project}"
           }
 
@@ -111,7 +113,7 @@ jobs:
       - name: Upload packages
         uses: actions/upload-artifact@v4
         with:
-          name: packages-${{ matrix.project }}
+          name: packages-${{ matrix.id }}
           if-no-files-found: 'error'
           path: |
             publish/*.nupkg
