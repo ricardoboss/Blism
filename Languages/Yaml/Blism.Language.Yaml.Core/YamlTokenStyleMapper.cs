@@ -2,9 +2,9 @@
 
 namespace Blism.Language.Yaml.Core;
 
-public class YamlStyleMapper : ITokenStyleMapper<YamlTokenType>
+public class YamlTokenStyleMapper : ITokenStyleMapper<YamlTokenType>
 {
-	public static readonly YamlStyleMapper Instance = new();
+	public static readonly YamlTokenStyleMapper Instance = new();
 
 	public StyleTokenType MapTokenType(YamlTokenType tokenType)
 	{
