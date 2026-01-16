@@ -1,10 +1,11 @@
 <Project>
 
 	<PropertyGroup>
-		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-		<ReadmeFilePath>$(MSBuildProjectDirectory)\README.md</ReadmeFilePath>
-		<ChangelogFilePath>$(MSBuildThisFileDirectory)\CHANGELOG.md</ChangelogFilePath>
-		<LicenseFilePath>$(MSBuildThisFileDirectory)\LICENSE.md</LicenseFilePath>
+		<RepoRoot>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)'))</RepoRoot>
+		<ReadmeFilePath>$(RepoRoot)\README.md</ReadmeFilePath>
+		<ChangelogFilePath>$(RepoRoot)\CHANGELOG.md</ChangelogFilePath>
+		<LicenseFilePath>$(RepoRoot)\LICENSE.md</LicenseFilePath>
+		<PackageOutputPath>$(RepoRoot)\publish</PackageOutputPath>
 	</PropertyGroup>
 
 	<PropertyGroup>
