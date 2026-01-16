@@ -1,4 +1,4 @@
-# Unreleased
+# 3.0.0
 
 - Added `Blism.Bundle.Languages.Blazor` and `Blism.Bundle.Languages` packages
 - BREAKING: renamed `YamlStyleMapper` to `YamlTokenStyleMapper`
