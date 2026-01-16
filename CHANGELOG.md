@@ -3,9 +3,6 @@
 - Added `Blism.Bundle.Languages.Blazor` and `Blism.Bundle.Languages` packages
 - BREAKING: renamed `YamlStyleMapper` to `YamlTokenStyleMapper`
 - Added support for WPF and added controls for all available languages
-
-# 2.0.0
-
 - Updated to .NET 10
 - BREAKING: Reorganized packages:
   - `Blism.Core` is a pure .NET package, no Blazor dependency
@@ -14,6 +11,10 @@
 - BREAKING: Themes are now decoupled from Blazor and the language
   - Theme is now a required parameter for `SyntaxHighlighter`
   - Languages must provide a mapping from their tokens to style tokens
+
+# 2.0.0
+
+This version was skipped.
 
 # 1.3.3
 
