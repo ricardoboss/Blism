@@ -2,6 +2,7 @@
 
 - Added `Blism.Bundle.Languages.Blazor` and `Blism.Bundle.Languages` packages
 - BREAKING: renamed `YamlStyleMapper` to `YamlTokenStyleMapper`
+- Added support for WPF and added controls for all available languages
 
 # 2.0.0
 
