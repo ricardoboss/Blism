@@ -111,9 +111,11 @@ jobs:
       - name: Upload packages
         uses: actions/upload-artifact@v4
         with:
-          name: packages
-          path: publish/*.nupkg
+          name: packages-${{ matrix.project }}
           if-no-files-found: 'error'
+          path: |
+            publish/*.nupkg
+            publish/*.snupkg
 
   publish:
     name: Publish
@@ -132,8 +134,9 @@ jobs:
     steps:
       - uses: actions/download-artifact@v4
         with:
-          name: packages
+          pattern: packages-*
           path: publish
+          merge-multiple: true
 
       - name: Publish NuGet Packages
         shell: bash
