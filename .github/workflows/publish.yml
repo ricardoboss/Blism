@@ -33,11 +33,32 @@ jobs:
             local dir="$1"
 
             name=$(basename "$dir")
-            [[ "$name" =~ \.Test$ ]] && return
+            [[ "$name" =~ \.Test$ ]] && {
+              echo "skip: ${dir} (test folder)"
+              return
+            }
 
-            entries+=("{ \"path\": \"${dir}\" }")
+            projects=("$dir"/*.csproj)
 
-            echo "discovered: path=${dir}"
+            if [[ "${#projects[@]}" -eq 0 ]]; then
+              echo "skip: ${dir} (no csproj)"
+              return
+            fi
+
+            if [[ "${#projects[@]}" -gt 1 ]]; then
+              echo "::error::Multiple csproj files in ${dir}"
+              exit 1
+            fi
+
+            project="${projects[0]}"
+
+            if ! grep -q '<IsPackable>true</IsPackable>' "$project"; then
+              echo "skip: ${project} (IsPackable != true)"
+              return
+            fi
+
+            entries+=("{\"project\":\"${project}\"}")
+            echo "discovered: project=${project}"
           }
 
           # Engines/<Package>
@@ -87,14 +108,17 @@ jobs:
       - uses: actions/setup-dotnet@v5
 
       - name: Build
-        run: dotnet build -c Release
+        run: dotnet build ${{ matrix.project }} -c Release
+
+      - name: Pack
+        run: dotnet pack ${{ matrix.project }} -c Release --no-build
 
       - name: Publish
-        shell: bash
         if: startsWith(github.ref, 'refs/tags/v')
+        shell: bash
         run: |
           shopt -s nullglob
-          dotnet nuget push "${{ matrix.path }}/bin/Release/"*.nupkg \
+          dotnet nuget push publish/*.nupkg \
             -k "${{ secrets.NUGET_API_KEY }}" \
             -s https://api.nuget.org/v3/index.json
 
