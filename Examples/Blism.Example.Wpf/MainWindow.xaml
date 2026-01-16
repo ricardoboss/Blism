@@ -7,10 +7,21 @@
         xmlns:themeDefaultDark="clr-namespace:Blism.Theme.DefaultDark;assembly=Blism.Theme.DefaultDark"
         xmlns:example="clr-namespace:Blism.Example.Wpf"
         xmlns:bashWpf="clr-namespace:Blism.Language.Bash.Wpf;assembly=Blism.Language.Bash.Wpf"
+        xmlns:yamlWpf="clr-namespace:Blism.Language.Yaml.Wpf;assembly=Blism.Language.Yaml.Wpf"
+        xmlns:dartWpf="clr-namespace:Blism.Language.Dart.Wpf;assembly=Blism.Language.Dart.Wpf"
+        xmlns:phpWpf="clr-namespace:Blism.Language.Php.Wpf;assembly=Blism.Language.Php.Wpf"
         mc:Ignorable="d"
-        Title="Blism.Example.Wpf" Height="900" Width="900">
+        Title="Blism.Example.Wpf" Height="900" Width="1200">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
             <ColumnDefinition />
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
@@ -18,13 +29,36 @@
         <csharpWpf:CSharpSyntaxHighlighter
             Grid.Row="0"
             Grid.Column="0"
+            Grid.ColumnSpan="2"
             Code="{x:Static example:MainWindow.CSharpSource}"
             Theme="{x:Static themeDefaultDark:DefaultDarkTheme.Instance }" />
 
-        <bashWpf:BashSyntaxHighlighter
+        <yamlWpf:YamlSyntaxHighlighter
             Grid.Row="0"
-            Grid.Column="1"
+            Grid.Column="2"
+            Grid.ColumnSpan="2"
+            Code="{x:Static example:MainWindow.YamlSource}"
+            Theme="{x:Static themeDefaultDark:DefaultDarkTheme.Instance }" />
+
+        <dartWpf:DartSyntaxHighlighter
+            Grid.Row="0"
+            Grid.Column="4"
+            Grid.ColumnSpan="2"
+            Code="{x:Static example:MainWindow.DartSource}"
+            Theme="{x:Static themeDefaultDark:DefaultDarkTheme.Instance }" />
+
+        <bashWpf:BashSyntaxHighlighter
+            Grid.Row="1"
+            Grid.Column="0"
+            Grid.ColumnSpan="3"
             Code="{x:Static example:MainWindow.BashSource}"
+            Theme="{x:Static themeDefaultDark:DefaultDarkTheme.Instance }" />
+
+        <phpWpf:PhpSyntaxHighlighter
+            Grid.Row="1"
+            Grid.Column="3"
+            Grid.ColumnSpan="3"
+            Code="{x:Static example:MainWindow.PhpSource}"
             Theme="{x:Static themeDefaultDark:DefaultDarkTheme.Instance }" />
     </Grid>
 </Window>
